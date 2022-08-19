@@ -2,7 +2,6 @@
 
 use rocket::*;
 use rocket_contrib::json::Json;
-use rusqlite::Connection;
 use serde::Serialize;
 
 
@@ -21,24 +20,10 @@ fn data_test() -> Json<DataPlaceHolder> {
 }
 
 fn main() {
-    {
-        let db_connection = Connection::open("data.sqlite").unwrap();
-
-        db_connection
-            .execute(
-                "create table if not exists todo_list (
-                    id integer primary key,
-                    item varchar(64) not null
-                );",
-                rusqlite::NO_PARAMS,
-            )
-            .unwrap();
-    }
-
     rocket::ignite()
         .mount(
             "/",
-            routes![index, fetch_all_todo_items, add_todo_item, remove_todo_item,data_test],
+            routes![index,data_test],
         )
         .launch();
 }
