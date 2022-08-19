@@ -5,7 +5,9 @@ use serde::Serialize;
 
 #[get("/")]
 pub fn index() -> &'static str {
-    "Hello, world!"
+    "Welcome to Basic Rust API\n\
+    The current routes are [/data]"
+
 }
 #[derive(Serialize)]
 

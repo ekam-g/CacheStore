@@ -4,7 +4,7 @@ use rocket::*;
 mod routes;
 
 fn main() {
-    rocket::ignite()
+    ignite()
         .mount(
             "/",
             routes![routes::index,routes::data_test],
