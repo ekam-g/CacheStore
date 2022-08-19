@@ -7,7 +7,8 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="init">
+    <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="dead code removed">
+      <change afterPath="$PROJECT_DIR$/src/routes.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
@@ -53,6 +54,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.disableDetachedFileInspection/home/carghai/IdeaProjects/rust_https_sever/src/https/routes.rs&quot;: &quot;true&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
@@ -88,7 +90,8 @@
       <option name="presentableId" value="Default" />
       <updated>1660924075474</updated>
       <workItem from="1660924078782" duration="2526000" />
-      <workItem from="1660926993186" duration="4439000" />
+      <workItem from="1660926993186" duration="6245000" />
+      <workItem from="1660943931660" duration="976000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -97,7 +100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1660930560031</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="works">
+      <created>1660936793321</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660936793321</updated>
+    </task>
+    <task id="LOCAL-00003" summary="dead code removed">
+      <created>1660936927801</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660936927801</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +134,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="works" />
+    <MESSAGE value="dead code removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="dead code removed" />
   </component>
 </project>
