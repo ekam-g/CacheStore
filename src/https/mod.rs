@@ -3,6 +3,9 @@ use rocket::*;
 use rocket_contrib::json::Json;
 use serde::Serialize;
 
+
+
+
 #[get("/")]
 pub fn index() -> &'static str {
     "Welcome to Basic Rust API\n\

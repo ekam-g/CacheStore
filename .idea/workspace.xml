@@ -7,9 +7,11 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="works pub func are weird">
+    <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/https/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.rs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +57,18 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.disableDetachedFileInspection/Users/ekam/IdeaProjects/rust_https_sever/src/https/routes.rs": "true",
     "org.rust.disableDetachedFileInspection/home/carghai/IdeaProjects/rust_https_sever/src/https/routes.rs": "true",
     "settings.editor.selected.configurable": "language.rust.cargo.check",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/https" />
+      <recent name="$PROJECT_DIR$/src/routes" />
+    </key>
+  </component>
   <component name="RunManager" selected="Cargo.Run">
     <configuration name="Expand rust_https_sever" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="expand --bin rust_https_sever --color=always --theme=Dracula --tests" />
@@ -116,7 +125,7 @@
       <workItem from="1660924078782" duration="2526000" />
       <workItem from="1660926993186" duration="6245000" />
       <workItem from="1660943931660" duration="2452000" />
-      <workItem from="1661014974318" duration="786000" />
+      <workItem from="1661014974318" duration="2046000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -146,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660945062928</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixes and stuff">
+      <created>1661015768931</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661015768931</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +185,8 @@
     <MESSAGE value="works" />
     <MESSAGE value="dead code removed" />
     <MESSAGE value="works pub func are weird" />
-    <option name="LAST_COMMIT_MESSAGE" value="works pub func are weird" />
+    <MESSAGE value="fixes and stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes and stuff" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

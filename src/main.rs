@@ -2,13 +2,14 @@
 //this is needed don't delete
 use rocket::*;
 
-mod routes;
+pub mod https;
+
 
 fn main() {
     ignite()
         .mount(
             "/",
-            routes![routes::index,routes::data_test],
+            routes![https::index,https::data_test],
         )
         .launch();
 }
