@@ -20,5 +20,6 @@ pub struct DataPlaceHolder {
 
 #[get("/data")]
 pub fn data_test() -> Json<DataPlaceHolder> {
-    Json(DataPlaceHolder { data : "yes".parse().unwrap() })
+    let content: String = "the data page worked".to_string();
+    Json(DataPlaceHolder { data : content })
 }
