@@ -12,7 +12,6 @@
       <change beforePath="$PROJECT_DIR$/src/data_getting_test/cache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/cache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_getting_test/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/https/routes/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +128,7 @@
       <workItem from="1660943931660" duration="2452000" />
       <workItem from="1661014974318" duration="5511000" />
       <workItem from="1661049821580" duration="7628000" />
-      <workItem from="1661084771173" duration="2756000" />
+      <workItem from="1661084771173" duration="3293000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -194,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661060311300</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="done">
+      <created>1661087949572</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1661087949572</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +228,8 @@
     <MESSAGE value="vars" />
     <MESSAGE value="better orgination" />
     <MESSAGE value="almost done" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost done" />
+    <MESSAGE value="done" />
+    <option name="LAST_COMMIT_MESSAGE" value="done" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

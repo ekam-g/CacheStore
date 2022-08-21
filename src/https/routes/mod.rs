@@ -17,12 +17,12 @@ pub fn index() -> &'static str {
 
 pub struct DataPlaceHolder {
     data : Vec<String>,
-    error : String,
+    error : bool,
 }
 
 #[get("/data")]
 pub fn data_test() -> Json<DataPlaceHolder> {
-    let mut error = false;
+    let mut error_found = false;
     let mut v = Vec::new();
     let path = "src/data_getting_test/cache.txt";
     let file = File::open(path).expect("file not found");
@@ -34,9 +34,9 @@ pub fn data_test() -> Json<DataPlaceHolder> {
             }
             Err(e) => {
                 v.push(e.to_string());
-                error = true;
+                error_found = true;
             }
         }
     }
-    Json(DataPlaceHolder { data : v, error : error.to_string() })
+    Json(DataPlaceHolder { data : v, error : error_found})
 }
