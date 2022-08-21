@@ -1,5 +1,4 @@
-use std::io::{Write, BufReader, BufRead, Error};
-use std::{thread, time};
+use std::io::{BufReader, BufRead};
 use std::fs::File;
 use rocket::*;
 use rocket_contrib::json::Json;
@@ -18,17 +17,26 @@ pub fn index() -> &'static str {
 
 pub struct DataPlaceHolder {
     data : Vec<String>,
+    error : String,
 }
 
 #[get("/data")]
 pub fn data_test() -> Json<DataPlaceHolder> {
-    let path = "src/data_getting_test/cache.txt";
-    let input = File::open(path).expect("file not found");
-    let buffered = BufReader::new(input);
+    let mut error = false;
     let mut v = Vec::new();
-    for line in buffered.lines() {
-        v.push(line);
+    let path = "src/data_getting_test/cache.txt";
+    let file = File::open(path).expect("file not found");
+    let reader = BufReader::new(file);
+    for line in reader.lines() {
+        match line {
+            Ok(l) => {
+                v.push(l);
+            }
+            Err(e) => {
+                v.push(e.to_string());
+                error = true;
+            }
+        }
     }
-    let content: String = "the data page worked".to_string();
-    Json(DataPlaceHolder { data : v })
+    Json(DataPlaceHolder { data : v, error : error.to_string() })
 }
