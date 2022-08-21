@@ -13,7 +13,7 @@ impl Get for Data {
         let mut x = 0;
         loop {
             x += 1;
-            let output = File::create("src/data_getting_test/cache.txt");
+            let  output = File::create("src/data_getting_test/cache.txt");
             match output {
                 Ok(mut f) => {
                     let error = write!(f, "{}", x);

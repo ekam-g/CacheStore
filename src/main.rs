@@ -1,10 +1,8 @@
 #![feature(proc_macro_hygiene, decl_macro)]
-
 use std::thread;
 use crate::data_getting_test::Get;
 use crate::https::Start;
-
-pub mod https;
+mod https;
 mod data_getting_test;
 
 
