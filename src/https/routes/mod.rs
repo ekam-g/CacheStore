@@ -21,8 +21,7 @@ pub struct DataPlaceHolder {
 pub fn data_test() -> Json<DataPlaceHolder> {
     let mut error_found = false;
     let mut v = Vec::new();
-    let path = "src/data_getting_test/cache.txt";
-    let file = File::open(path);
+    let file = File::open("src/data_getting_test/cache.txt");
     match file {
         Ok(success) => {
             let reader = BufReader::new(success);
