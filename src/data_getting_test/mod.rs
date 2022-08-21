@@ -26,4 +26,3 @@ pub fn data_get(){
         thread::sleep(time::Duration::from_millis(100));
     }
 }
-
