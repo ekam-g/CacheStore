@@ -1,17 +1,18 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
 use std::thread;
-use crate::https::start;
+use crate::data_getting_test::Get;
+use crate::https::Start;
 
 pub mod https;
 mod data_getting_test;
 
 
 fn main() {
-    thread::spawn(move || {
-        data_getting_test::data_get();
+    thread::spawn(|| {
+        data_getting_test::Data{}.get();
     });
-   start();
+   https::Web{}.start();
 }
 // rustup override set nightly
 // do this so night can be used in the code

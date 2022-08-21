@@ -7,11 +7,12 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
+    <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="sp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_getting_test/cache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/cache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_getting_test/mod.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_getting_test/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/https/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/https/routes/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +129,9 @@
       <workItem from="1660943931660" duration="2452000" />
       <workItem from="1661014974318" duration="5511000" />
       <workItem from="1661049821580" duration="7628000" />
-      <workItem from="1661084771173" duration="4424000" />
+      <workItem from="1661084771173" duration="5017000" />
+      <workItem from="1661093351230" duration="59000" />
+      <workItem from="1661100347745" duration="1482000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -228,7 +231,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661089033528</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="clean up">
+      <created>1661089849456</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1661089849456</updated>
+    </task>
+    <task id="LOCAL-00016" summary="all errors clean and it is done">
+      <created>1661090049746</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1661090049746</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +276,8 @@
     <MESSAGE value="all error handled" />
     <MESSAGE value="done" />
     <MESSAGE value="clean up" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean up" />
+    <MESSAGE value="all errors clean and it is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="all errors clean and it is done" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
