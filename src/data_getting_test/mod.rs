@@ -23,7 +23,7 @@ pub fn data_get(){
                 println!("{}", e);
             }
         }
-
+        thread::sleep(time::Duration::from_millis(100));
     }
 }
 
