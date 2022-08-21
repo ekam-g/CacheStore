@@ -5,19 +5,16 @@ use rocket_contrib::json::Json;
 use serde::Serialize;
 
 
-
-
 #[get("/")]
 pub fn index() -> &'static str {
     "Welcome to Basic Rust API\n\
     The current routes are [/data]"
-
 }
-#[derive(Serialize)]
 
+#[derive(Serialize)]
 pub struct DataPlaceHolder {
-    data : Vec<String>,
-    error : bool,
+    data: Vec<String>,
+    error: bool,
 }
 
 #[get("/data")]
@@ -25,18 +22,26 @@ pub fn data_test() -> Json<DataPlaceHolder> {
     let mut error_found = false;
     let mut v = Vec::new();
     let path = "src/data_getting_test/cache.txt";
-    let file = File::open(path).expect("file not found");
-    let reader = BufReader::new(file);
-    for line in reader.lines() {
-        match line {
-            Ok(l) => {
-                v.push(l);
-            }
-            Err(e) => {
-                v.push(e.to_string());
-                error_found = true;
+    let file = File::open(path);
+    match file {
+        Ok(success) => {
+            let reader = BufReader::new(success);
+            for line in reader.lines() {
+                match line {
+                    Ok(l) => {
+                        v.push(l);
+                    }
+                    Err(e) => {
+                        v.push(e.to_string());
+                        error_found = true;
+                    }
+                }
             }
         }
+        Err(error) => {
+            v.push(error.to_string());
+            error_found = true;
+        }
     }
-    Json(DataPlaceHolder { data : v, error : error_found})
+    Json(DataPlaceHolder { data: v, error: error_found })
 }

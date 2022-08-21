@@ -8,9 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_getting_test/cache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/cache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_getting_test/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/https/routes/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +125,7 @@
       <workItem from="1660943931660" duration="2452000" />
       <workItem from="1661014974318" duration="5511000" />
       <workItem from="1661049821580" duration="7628000" />
-      <workItem from="1661084771173" duration="3293000" />
+      <workItem from="1661084771173" duration="3741000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -200,7 +197,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661087949572</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="all error handled">
+      <created>1661088577634</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1661088577634</updated>
+    </task>
+    <task id="LOCAL-00012" summary="all error handled">
+      <created>1661088727706</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1661088727706</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +240,8 @@
     <MESSAGE value="better orgination" />
     <MESSAGE value="almost done" />
     <MESSAGE value="done" />
-    <option name="LAST_COMMIT_MESSAGE" value="done" />
+    <MESSAGE value="all error handled" />
+    <option name="LAST_COMMIT_MESSAGE" value="all error handled" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
