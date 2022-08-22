@@ -6,7 +6,7 @@ pub struct Data{}
 
 
 impl Data {
-    pub(crate) fn get(&self) {
+    pub fn get(&self) {
         let mut x = 0;
         loop {
             x += 1;

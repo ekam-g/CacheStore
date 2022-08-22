@@ -7,7 +7,7 @@ pub struct Web {}
 
 
 impl Web {
-    pub(crate) fn start(&self) {
+    pub fn start(&self) {
         ignite()
             .mount(
                 "/",
