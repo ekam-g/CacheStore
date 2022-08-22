@@ -5,12 +5,8 @@ use rocket::*;
 
 pub struct Web {}
 
-pub trait Start {
-    fn start(&self);
-}
 
-
-impl Start for Web {
+impl Start {
     fn start(&self) {
         ignite()
             .mount(

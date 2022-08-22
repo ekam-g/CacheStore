@@ -4,11 +4,8 @@ use std::{thread, time};
 
 pub struct Data{}
 
-pub trait Get {
-    fn get(&self);
-}
 
-impl Get for Data {
+impl Data {
     fn get(&self) {
         let mut x = 0;
         loop {
