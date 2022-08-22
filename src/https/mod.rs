@@ -6,8 +6,8 @@ use rocket::*;
 pub struct Web {}
 
 
-impl Start {
-    fn start(&self) {
+impl Web {
+    pub(crate) fn start(&self) {
         ignite()
             .mount(
                 "/",
