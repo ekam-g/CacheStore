@@ -1,5 +1,3 @@
-use std::fs::File;
-use std::io::{Write};
 use std::{thread, time};
 use crate::files;
 

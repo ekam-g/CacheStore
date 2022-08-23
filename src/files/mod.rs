@@ -1,4 +1,3 @@
-use std::fs;
 use std::io;
 use std::fs::File;
 use std::io::{BufRead, BufReader, Empty, empty, Write};
