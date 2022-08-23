@@ -1,5 +1,4 @@
 pub mod routes;
-
 use rocket::*;
 
 
@@ -11,7 +10,7 @@ impl Web {
         ignite()
             .mount(
                 "/",
-                routes![routes::index,routes::data_test],
+                routes![routes::index,routes::get_data::data_test],
             )
             .launch();
     }

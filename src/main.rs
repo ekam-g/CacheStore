@@ -11,7 +11,6 @@ fn main() {
         data_getting_test::Data {}.get()
     });
     https::Web{}.start();
-
 }
 // rustup override set nightly
 // do this so night can be used in the code
