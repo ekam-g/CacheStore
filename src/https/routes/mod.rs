@@ -18,17 +18,20 @@ pub struct DataPlaceHolder {
 
 #[get("/data")]
 pub fn data_test() -> Json<DataPlaceHolder> {
-    let mut error_found = false;
-    let mut v = Vec::new();
-    let result = files::Modify{}.read(  "src/data_getting_test/cache.txt");
-    match result {
-        Ok(request) =>{
-            v = request;
+    let result = files::Modify {}.read("src/data_getting_test/cache.txt");
+    return match result {
+        Ok(request) => {
+            Json(DataPlaceHolder {
+                data: request,
+                error: false,
+            })
         }
         Err(error) => {
-            error_found = true;
             println!("{}", error);
+            Json(DataPlaceHolder {
+                data: vec![error.to_string()],
+                error: true,
+            })
         }
-    }
-    Json(DataPlaceHolder { data: v, error: error_found })
+    };
 }
