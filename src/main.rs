@@ -2,7 +2,7 @@
 use std::thread;
 mod https;
 mod data_getting_test;
-
+mod files;
 
 fn main() {
     thread::spawn(|| {
