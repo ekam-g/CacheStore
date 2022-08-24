@@ -1,9 +1,10 @@
-use std::io;
-use std::iter::Map;
-use reqwest::{Error, Response};
+use reqwest::{Error};
 use crate::func::http_request::Request;
 use serde::{Serialize, Deserialize};
 
+
+
+//this may need to be changed
 #[derive(Serialize, Deserialize)]
 pub struct MainParse {
     pub(crate) data: Vec<Embed>,
@@ -13,7 +14,7 @@ pub struct MainParse {
 pub struct Embed {
     pub(crate) perm: String,
 }
-
+//end
 
 impl Request {
     pub async fn read() -> Result<MainParse, Error> {

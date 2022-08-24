@@ -9,7 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_getting_test/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/func/files/write.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/files/write.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/func/http_request/read.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/http_request/read.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +153,7 @@
       <workItem from="1661314786046" duration="4892000" />
       <workItem from="1661359153193" duration="9837000" />
       <workItem from="1661374237919" duration="65000" />
-      <workItem from="1661374456479" duration="2113000" />
+      <workItem from="1661374456479" duration="2865000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -386,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661369170709</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="read works">
+      <created>1661380818744</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1661380818744</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +412,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="init" />
     <MESSAGE value="works" />
     <MESSAGE value="dead code removed" />
     <MESSAGE value="works pub func are weird" />
@@ -430,7 +436,8 @@
     <MESSAGE value="add https fn" />
     <MESSAGE value="https works now" />
     <MESSAGE value="work fine" />
-    <option name="LAST_COMMIT_MESSAGE" value="work fine" />
+    <MESSAGE value="read works" />
+    <option name="LAST_COMMIT_MESSAGE" value="read works" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
