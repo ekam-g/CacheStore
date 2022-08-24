@@ -2,7 +2,7 @@
 
 mod https;
 mod data_getting_test;
-mod files;
+mod func;
 
 #[tokio::main]
 async fn main() {

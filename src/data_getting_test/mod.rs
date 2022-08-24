@@ -1,6 +1,6 @@
 use std::{thread, time};
-use crate::files;
 use serde::{Serialize, Deserialize};
+use crate::func::files;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Data {}
@@ -18,13 +18,13 @@ impl Data {
     pub async fn get(&self) {
         let mut x: i64 = 0;
         loop {
-            // let todos: Vec<Todo> = reqwest::Client::new()
-            //     .get("https://jsonplaceholder.typicode.com/todos?userId=1")
-            //     .send()
-            //     .await.expect("")
-            //     .json()
-            //     .await.expect("");
-            // println!("{:#?}", todos);
+            let todos: Vec<Todo> = reqwest::Client::new()
+                .get("https://jsonplaceholder.typicode.com/todos?userId=1")
+                .send()
+                .await.expect("")
+                .json()
+                .await.expect("");
+            println!("{:#?}", todos[1].title);
 
             x = x + 1;
             let output = files::Modify {}.write(x.to_string(), "src/data_getting_test/cache.txt");

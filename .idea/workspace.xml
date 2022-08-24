@@ -7,12 +7,16 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="speed">
+    <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/func/http_request/mod.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/func/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_getting_test/cache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/cache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_getting_test/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/files/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/files/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/files/read.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/files/read.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/files/write.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/files/write.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/https/routes/get_data.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/get_data.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +73,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/func" />
+      <recent name="$PROJECT_DIR$/src/func/http_request" />
       <recent name="$PROJECT_DIR$/src/https/routes" />
       <recent name="$PROJECT_DIR$/src/https" />
       <recent name="$PROJECT_DIR$/src/routes" />
@@ -152,7 +157,8 @@
       <workItem from="1661295010005" duration="304000" />
       <workItem from="1661295405209" duration="1546000" />
       <workItem from="1661311688343" duration="2252000" />
-      <workItem from="1661314786046" duration="4029000" />
+      <workItem from="1661314786046" duration="4892000" />
+      <workItem from="1661359153193" duration="1923000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -350,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661296308538</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="async stuff">
+      <created>1661319079919</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1661319079920</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +402,8 @@
     <MESSAGE value="clean up and faster" />
     <MESSAGE value="clean up" />
     <MESSAGE value="speed" />
-    <option name="LAST_COMMIT_MESSAGE" value="speed" />
+    <MESSAGE value="async stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="async stuff" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

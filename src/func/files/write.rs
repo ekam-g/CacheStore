@@ -1,7 +1,8 @@
-use crate::files::Modify;
 use std::io;
 use std::fs::File;
 use std::io::{Empty, empty, Write};
+use files::Modify;
+use crate::func::files;
 
 impl Modify {
     pub fn write(&self, data: String, path: &str) -> Result<Empty, io::Error> {

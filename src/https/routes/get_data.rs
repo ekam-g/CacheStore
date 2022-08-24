@@ -1,7 +1,7 @@
 use rocket_contrib::json::Json;
-use crate::files;
 use serde::Serialize;
 use rocket::get;
+use crate::func::files;
 
 #[derive(Serialize)]
 pub struct DataPlaceHolder {

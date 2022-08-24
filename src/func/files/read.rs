@@ -1,7 +1,7 @@
-use crate::files::Modify;
 use std::io;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
+use crate::func::files::Modify;
 
 
 impl Modify{
