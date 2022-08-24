@@ -1,2 +1,2 @@
 pub mod files;
-mod http_request;
+pub mod http_request;
