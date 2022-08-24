@@ -8,7 +8,7 @@ impl Data {
     pub async fn get(&self) {
         loop {
             let data = http_request::Request::read().await;
-            let output = files::Modify {}.write("2".to_string(), "src/data_getting_test/cache.txt");
+            let output = files::Modify {}.write(data.data[0].perm.to_string(), "src/data_getting_test/cache.txt");
             match output {
                 Ok(..) => {
                     thread::sleep(time::Duration::from_millis(1000));

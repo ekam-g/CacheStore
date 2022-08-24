@@ -4,18 +4,18 @@ use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize)]
 pub struct MainParse {
-   data: Vec<Embed>,
+   pub(crate) data: Vec<Embed>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Embed {
-   perm: String,
+   pub(crate) perm: String,
 }
 
 
 impl Request{
    pub async fn read() -> MainParse {
-      let data: Welcome = reqwest::Client::new()
+      let data: MainParse = reqwest::Client::new()
           .get("http://localhost:3000/getAll?apiKey=gdsjahbcadyfasdcnlhdfgaoDSHANFDIUGAYSDFAWSNDdifuHDBSFJDSFHSDOUAGHNHBOUhgougfUYFoulhbygcIOpihnijBuygfouboiuHouhvouGHFVOIUlniohgOUHvouVY9TDIHGvihgvifhgcd56476")
           .send()
           .await.expect("failed on request")
