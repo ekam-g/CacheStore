@@ -8,7 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/data_getting_test/cache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/cache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_getting_test/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/func/http_request/read.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/http_request/read.rs" afterDir="false" />
     </list>
@@ -151,7 +151,9 @@
       <workItem from="1661295405209" duration="1546000" />
       <workItem from="1661311688343" duration="2252000" />
       <workItem from="1661314786046" duration="4892000" />
-      <workItem from="1661359153193" duration="9161000" />
+      <workItem from="1661359153193" duration="9837000" />
+      <workItem from="1661374237919" duration="65000" />
+      <workItem from="1661374456479" duration="2113000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -377,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661368678902</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="work fine">
+      <created>1661369170709</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1661369170709</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +429,8 @@
     <MESSAGE value="https added" />
     <MESSAGE value="add https fn" />
     <MESSAGE value="https works now" />
-    <option name="LAST_COMMIT_MESSAGE" value="https works now" />
+    <MESSAGE value="work fine" />
+    <option name="LAST_COMMIT_MESSAGE" value="work fine" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
