@@ -1,20 +1,34 @@
 use std::{thread, time};
 use crate::func::files;
 use crate::func::http_request;
+
 pub struct Data {}
 
 
 impl Data {
     pub async fn get(&self) {
         loop {
-            let data = http_request::Request::read().await.expect("failed on request");
-            let output = files::Modify {}.write(data.data[0].perm.to_string(), "src/data_getting_test/cache.txt");
-            match output {
-                Ok(..) => {
-                    thread::sleep(time::Duration::from_millis(1000));
+            let result_data = http_request::Request::read().await;
+            match result_data {
+                Ok(data) => {
+                    let mut error_found = false;
+                    for i in &data.data {
+                        let output = files::Modify {}.write(i.perm.to_string(), "src/data_getting_test/cache.txt");
+                        match output {
+                            Ok(..) => {}
+                            Err(error) => {
+                                error_found = true;
+                                println!("{}", error);
+                                break;
+                            }
+                        }
+                    }
+                    if !error_found {
+                        thread::sleep(time::Duration::from_secs(10));
+                    }
                 }
-                Err(error) => {
-                    println!("{}", error);
+                Err(e) => {
+                    println!("{:?}", e);
                 }
             }
             thread::sleep(time::Duration::from_millis(100));
