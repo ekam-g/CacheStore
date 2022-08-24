@@ -1,15 +1,14 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
-use std::thread;
-
 mod https;
 mod data_getting_test;
 mod files;
 
-fn main() {
-    thread::spawn(|| {
-        data_getting_test::Data {}.get()
-    });
+#[tokio::main]
+async fn main() {
+    tokio::spawn(async {
+         data_getting_test::Data {}.get().await;
+     });
     https::Web{}.start();
 }
 // rustup override set nightly
