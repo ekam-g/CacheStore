@@ -1,24 +1,26 @@
+use std::iter::Map;
 use crate::func::http_request::Request;
 use serde::{Serialize, Deserialize};
 
-#[derive(Debug, Serialize, Deserialize)]
-pub struct Todo {
-   #[serde(rename = "userId")]
-   user_id: i32,
-   id: Option<i32>,
-   title: String,
-   completed: bool,
+#[derive(Serialize, Deserialize)]
+pub struct MainParse {
+   data: Vec<Embed>,
 }
 
+#[derive(Serialize, Deserialize)]
+pub struct Embed {
+   perm: String,
+}
+
+
 impl Request{
-   pub async fn read() -> Vec<Todo>{
-      let todos: Vec<Todo> = reqwest::Client::new()
-          .get("https://jsonplaceholder.typicode.com/todos?userId=1")
+   pub async fn read() -> MainParse {
+      let data: Welcome = reqwest::Client::new()
+          .get("http://localhost:3000/getAll?apiKey=gdsjahbcadyfasdcnlhdfgaoDSHANFDIUGAYSDFAWSNDdifuHDBSFJDSFHSDOUAGHNHBOUhgougfUYFoulhbygcIOpihnijBuygfouboiuHouhvouGHFVOIUlniohgOUHvouVY9TDIHGvihgvifhgcd56476")
           .send()
-          .await.expect("")
+          .await.expect("failed on request")
           .json()
-          .await.expect("");
-      println!("{:#?}", todos[1].title);
-      return todos;
+          .await.expect("failed on json");
+      return data;
    }
 }
