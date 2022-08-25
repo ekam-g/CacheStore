@@ -1,4 +1,5 @@
 use std::{thread, time};
+use std::io::Error;
 use crate::func::files;
 use crate::func::http_request;
 
@@ -12,8 +13,14 @@ impl Data {
             match result_data {
                 Ok(data) => {
                     let mut error_found = false;
+                    let mut amount: i8 = 0;
+                    let mut output: Result<(), Error>;
                     for data in &data.data {
-                        let output = files::WriteData {}.normal(data.perm.to_string(), "src/data_getting_test/cache.txt");
+                        if amount == 0 {
+                            output = files::WriteData {}.replace(data.perm.to_string(), "src/data_getting_test/cache.txt");
+                        } else {
+                            output = files::WriteData {}.normal(data.perm.to_string(), "src/data_getting_test/cache.txt");
+                        }
                         match output {
                             Ok(..) => {}
                             Err(error) => {
@@ -22,6 +29,7 @@ impl Data {
                                 break;
                             }
                         }
+                        amount = amount + 1;
                     }
                     if !error_found {
                         thread::sleep(time::Duration::from_secs(10));

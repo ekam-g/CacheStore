@@ -11,10 +11,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_getting_test/cache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/cache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_getting_test/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_getting_test/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/func/files/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/files/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/func/files/read.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/files/read.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/func/files/write.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/files/write.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/https/routes/get_data.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/get_data.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +155,8 @@
       <workItem from="1661359153193" duration="9837000" />
       <workItem from="1661374237919" duration="65000" />
       <workItem from="1661374456479" duration="7115000" />
-      <workItem from="1661389935256" duration="2313000" />
+      <workItem from="1661389935256" duration="3311000" />
+      <workItem from="1661394414530" duration="449000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -412,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661385588603</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="works">
+      <created>1661393459719</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1661393459719</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +436,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="works pub func are weird" />
     <MESSAGE value="fixes and stuff" />
     <MESSAGE value="better orgsation" />
     <MESSAGE value="vars" />
@@ -456,7 +460,8 @@
     <MESSAGE value="read works" />
     <MESSAGE value="opmized" />
     <MESSAGE value="works?" />
-    <option name="LAST_COMMIT_MESSAGE" value="works?" />
+    <MESSAGE value="works" />
+    <option name="LAST_COMMIT_MESSAGE" value="works" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
