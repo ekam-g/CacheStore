@@ -26,7 +26,6 @@ impl Data {
                             Err(error) => {
                                 error_found = true;
                                 println!("{}", error);
-                                break;
                             }
                         }
                         amount = amount + 1;
