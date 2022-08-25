@@ -9,4 +9,4 @@ It is fast and it take 2ms. Also if you want to local store data on your pc of y
 ## How should i use it?
 use this project as a starting point for you own project and even try to give back by sending pull requests!
 
-## git clone https://github.com/carghai/rust_database
+```git clone https://github.com/carghai/rust_database```
