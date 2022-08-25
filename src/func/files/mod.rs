@@ -1,4 +1,6 @@
 pub mod read;
 pub mod write;
 
-pub struct Modify();
+pub struct WriteData();
+
+pub struct ReadData();

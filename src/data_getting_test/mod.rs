@@ -12,8 +12,8 @@ impl Data {
             match result_data {
                 Ok(data) => {
                     let mut error_found = false;
-                    for i in &data.data {
-                        let output = files::Modify {}.write(i.perm.to_string(), "src/data_getting_test/cache.txt");
+                    for data in &data.data {
+                        let output = files::WriteData {}.normal(data.perm.to_string(), "src/data_getting_test/cache.txt");
                         match output {
                             Ok(..) => {}
                             Err(error) => {

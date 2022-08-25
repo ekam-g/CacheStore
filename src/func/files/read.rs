@@ -1,10 +1,10 @@
 use std::io;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
-use crate::func::files::Modify;
+use crate::func::files::ReadData;
 
 
-impl Modify{
+impl ReadData{
     pub fn read(&self, path: &str) -> Result<Vec<String>, io::Error> {
         let file = File::open(path.to_string());
         let mut v: Vec<String> = Vec::new();
