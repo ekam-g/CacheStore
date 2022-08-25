@@ -1,2 +1,2 @@
-# rust_database
-rust database for you to use and help me make!
+# Welcome To Rust Database
+## what is this?
