@@ -8,15 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rust_https_sever.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rust_database.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_getting_test/cache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/database_func/cache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_getting_test/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/database_func/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/func/http_request/read.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/http_request/read.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/https/routes/get_data.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/get_data.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/func/files/new_file.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database_func/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/database_func/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/func/files/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/files/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/https/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/https/routes/get_data.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/display_data.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/https/routes/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,28 +45,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "/Users/ekam/Documents/Code Projeects/rust_database",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.disableDetachedFileInspection/Users/ekam/IdeaProjects/rust_https_sever/src/func/file.rs": "true",
-    "org.rust.disableDetachedFileInspection/Users/ekam/IdeaProjects/rust_https_sever/src/https/routes.rs": "true",
-    "org.rust.disableDetachedFileInspection/home/carghai/IdeaProjects/rust_https_sever/src/https/routes.rs": "true",
-    "settings.editor.selected.configurable": "language.rust.cargo",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ekam/Documents/Code Projeects/rust_database&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.disableDetachedFileInspection/Users/ekam/IdeaProjects/rust_https_sever/src/func/file.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.disableDetachedFileInspection/Users/ekam/IdeaProjects/rust_https_sever/src/https/routes.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.disableDetachedFileInspection/home/carghai/IdeaProjects/rust_https_sever/src/https/routes.rs&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;language.rust.cargo&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/func" />
@@ -162,7 +160,9 @@
       <workItem from="1661374456479" duration="7115000" />
       <workItem from="1661389935256" duration="3311000" />
       <workItem from="1661394414530" duration="2256000" />
-      <workItem from="1661399270067" duration="946000" />
+      <workItem from="1661399270067" duration="1555000" />
+      <workItem from="1661446014963" duration="1289000" />
+      <workItem from="1661450509401" duration="1145000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -430,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661395090031</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="stuff">
+      <created>1661400224115</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1661400224115</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +456,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="better orgsation" />
     <MESSAGE value="vars" />
     <MESSAGE value="better orgination" />
     <MESSAGE value="almost done" />
@@ -474,7 +480,8 @@
     <MESSAGE value="works?" />
     <MESSAGE value="works" />
     <MESSAGE value="works and I'm done for today" />
-    <option name="LAST_COMMIT_MESSAGE" value="works and I'm done for today" />
+    <MESSAGE value="stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="stuff" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

@@ -1,4 +1,4 @@
-pub mod get_data;
+pub mod display_data;
 
 use rocket::*;
 
