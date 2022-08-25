@@ -9,4 +9,4 @@ It is fast and it takes 2ms to return data. Also if you want to local store data
 ## How should i use it?
 use this project as a starting point for you own project and even try to give back by sending pull requests!
 
-```git clone https://github.com/carghai/rust_database```
+```git clone https://github.com/carghai/RustStore```
