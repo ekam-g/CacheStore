@@ -11,7 +11,7 @@ pub struct DataPlaceHolder {
 
 #[get("/data")]
 pub fn data_test() -> Json<DataPlaceHolder> {
-    let result = files::ReadData {}.read("src/data_getting_test/cache.txt");
+    let result = files::ReadData {}.read("src/database_func/cache.txt");
     return match result {
         Ok(request) => {
             Json(DataPlaceHolder {

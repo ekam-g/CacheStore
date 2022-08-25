@@ -1201,7 +1201,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "rust_https_sever"
+name = "rust_database"
 version = "0.1.0"
 dependencies = [
  "reqwest",

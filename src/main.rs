@@ -1,13 +1,13 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
 mod https;
-mod data_getting_test;
+mod database_func;
 mod func;
 
 #[tokio::main]
 async fn main() {
     tokio::spawn(async {
-         data_getting_test::Data {}.get().await;
+        database_func::Func {}.example().await;
      });
     https::Web{}.start();
 }
