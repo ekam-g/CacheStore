@@ -10,7 +10,7 @@ impl Web {
         ignite()
             .mount(
                 "/",
-                routes![routes::index,routes::display_data::data_test],
+                routes![routes::index,routes::display_data::data_test, routes::add_data::data],
             )
             .launch();
     }

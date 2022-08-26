@@ -4,7 +4,7 @@ use files::WriteData;
 use crate::func::files;
 
 impl WriteData {
-    pub fn normal(&self, data: String, path: &str) -> Result<(), Error> {
+    pub fn normal(&self, data: &String, path: &str) -> Result<(), Error> {
         let output = OpenOptions::new()
             .write(true)
             .append(true)
