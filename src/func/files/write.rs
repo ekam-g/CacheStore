@@ -9,13 +9,13 @@ impl WriteData {
             .write(true)
             .append(true)
             .open(path);
-        return WriteData {}.process(output, data);
+        return WriteData {}.process(output, &data);
     }
     pub fn replace(&self, data: String, path: &str) -> Result<(), Error> {
         let output = File::create(path);
-        return WriteData {}.process(output, data);
+        return WriteData {}.process(output, &data);
     }
-    fn process(&self, output: Result<File, Error>, data: String) -> Result<(), Error> {
+    fn process(&self, output: Result<File, Error>, data: &String) -> Result<(), Error> {
         return match output {
             Ok(mut file) => {
                 let error = write!(file, "{}\n", data);
