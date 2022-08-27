@@ -160,7 +160,8 @@
       <workItem from="1661450509401" duration="4469000" />
       <workItem from="1661484125856" duration="3907000" />
       <workItem from="1661569244060" duration="6319000" />
-      <workItem from="1661607688374" duration="5452000" />
+      <workItem from="1661607688374" duration="5470000" />
+      <workItem from="1661617822260" duration="337000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -470,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661580903392</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="almost done">
+      <created>1661616538070</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1661616538070</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +497,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="all error handled" />
     <MESSAGE value="done" />
     <MESSAGE value="all errors clean and it is done" />
     <MESSAGE value="OOP done" />
@@ -514,7 +521,8 @@
     <MESSAGE value="create folder is done" />
     <MESSAGE value="add data" />
     <MESSAGE value="spliting func" />
-    <option name="LAST_COMMIT_MESSAGE" value="spliting func" />
+    <MESSAGE value="almost done" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost done" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

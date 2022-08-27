@@ -97,7 +97,7 @@ pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
                             }
                         };
                     }
-                   AddDataFunc{}.make_file(data, format!("{}/{}.txt", location, data_name));
+                   AddDataFunc{}.make_file(data, path, data_name)
                 }
             }
         }
