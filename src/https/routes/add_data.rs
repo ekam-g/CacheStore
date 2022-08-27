@@ -50,9 +50,9 @@ pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
                     AddDataFunc {}.make_file(data, path, data_name)
                 }
                 Err(_) => {
-                    let full = path.replace("database/", "");
+                    let full: String = path.replace("database/", "");
                     let where_file = full.split("/");
-                    let mut location = "database/".to_string();
+                    let mut location: String = "database/".to_string();
                     let mut error_count: i16 = 0;
                     for i in where_file {
                         location = location + i + "/";
@@ -69,7 +69,7 @@ pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
                     }
                     AddDataFunc {}.make_file(data, path, data_name)
                 }
-            }
+            };
         }
     };
 }

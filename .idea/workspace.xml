@@ -8,7 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/func/files/write.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/files/write.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/https/routes/add_data.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/add_data.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +160,7 @@
       <workItem from="1661484125856" duration="3907000" />
       <workItem from="1661569244060" duration="6319000" />
       <workItem from="1661607688374" duration="5470000" />
-      <workItem from="1661617822260" duration="1440000" />
+      <workItem from="1661617822260" duration="1965000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -492,7 +491,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661618630116</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="clean up">
+      <created>1661619284340</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1661619284340</updated>
+    </task>
+    <task id="LOCAL-00049" summary="faster">
+      <created>1661619535522</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1661619535522</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +528,6 @@
     <MESSAGE value="OOP done" />
     <MESSAGE value="fixed errors" />
     <MESSAGE value="better code" />
-    <MESSAGE value="faster" />
     <MESSAGE value="func now" />
     <MESSAGE value="clean up and faster" />
     <MESSAGE value="speed" />
@@ -536,7 +548,8 @@
     <MESSAGE value="almost done" />
     <MESSAGE value="add data work just need to optimize it" />
     <MESSAGE value="clean up" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean up" />
+    <MESSAGE value="faster" />
+    <option name="LAST_COMMIT_MESSAGE" value="faster" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
