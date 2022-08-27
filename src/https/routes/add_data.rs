@@ -12,6 +12,26 @@ pub struct Data {
     error: String,
 }
 
+struct AddDataFunc();
+
+impl AddDataFunc {
+    fn make_file(&self, data: String, path: String, data_name: String) -> Json<Data> {
+        let file_error = files::WriteData {}.replace(&data, &format!("{}/{}.txt", path, data_name));
+        drop(data);
+        return match file_error {
+            Err(e) => {
+                Json(Data {
+                    error: e.to_string(),
+                })
+            }
+            Ok(_) => {
+                Json(Data {
+                    error: "Success".to_string(),
+                })
+            }
+        };
+    }
+}
 #[get("/add/<path>/<data_name>/<data>")]
 pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
     path = path.replace("`", "/");
@@ -34,44 +54,53 @@ pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
                                 error: "Success".to_string(),
                             })
                         }
-                        Err(error) => {
-                            match error.kind() {
-                                ErrorKind::NotADirectory => {
-                                    let where_file = path.split("`");
-                                    for i in where_file {
-                                        let directory_error = fs::create_dir(i);
-                                        match directory_error {
-                                            Ok(_) => {}
-                                            Err(what) => {
-                                                match what.kind() {
-                                                    ErrorKind::AlreadyExists => {}
-                                                    other_error => {
-                                                        return Json(Data {
-                                                            error: "Error".to_string(),
-                                                        });
-                                                    }
-                                                }
+                        Err(_) => {
+                            // todo remove this code
+                            let where_file = path.split("`");
+                            for i in where_file {
+                                let directory_error = fs::create_dir(i);
+                                match directory_error {
+                                    Ok(_) => {}
+                                    Err(what) => {
+                                        match what.kind() {
+                                            ErrorKind::AlreadyExists => {}
+                                            other_error => {
+                                                return Json(Data {
+                                                    error: "Error".to_string(),
+                                                });
                                             }
-                                        };
+                                        }
                                     }
-                                }
-                                other_error => {
-                                    Json(Data {
-                                        error: "Error".to_string(),
-                                    })
-                                }
+                                };
                             }
+                            return Json(Data {
+                                error: "success".to_string(),
+                            });
                         }
                     }
                 }
                 Err(error) => {
-                    Json(Data {
-                        error: error.to_string(),
-                    })
+                    let full = path.replace("database/", "");
+                    let where_file = full.split("/");
+                    let mut location = "database/".to_string();
+                    let mut error_count: i16 = 0;
+                    for i in where_file {
+                        location = location + i + "/";
+                        let directory_error = fs::create_dir(&location);
+                        match directory_error {
+                            Ok(_) => {
+                                error_count += 1;
+                            }
+                            Err(error) => {
+                                error_count -= 1;
+                                println!("{}", error);
+                            }
+                        };
+                    }
+                   AddDataFunc{}.make_file(data, format!("{}/{}.txt", location, data_name));
                 }
             }
         }
     };
 }
-
 

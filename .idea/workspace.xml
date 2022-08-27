@@ -9,9 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/func/files/write.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/func/files/write.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/https/routes/add_data.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/add_data.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +159,8 @@
       <workItem from="1661446014963" duration="1289000" />
       <workItem from="1661450509401" duration="4469000" />
       <workItem from="1661484125856" duration="3907000" />
-      <workItem from="1661569244060" duration="5698000" />
+      <workItem from="1661569244060" duration="6319000" />
+      <workItem from="1661607688374" duration="5452000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1660930560031</created>
@@ -464,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661572936966</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="spliting func">
+      <created>1661580903392</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1661580903392</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
