@@ -55,9 +55,7 @@ pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
                         location = location + i + "/";
                         let directory_error = fs::create_dir(&location);
                         match directory_error {
-                            Ok(_) => {
-                                continue;
-                            }
+                            Ok(_) => {}
                             Err(error) => {
                                 return Json(Data {
                                     error: error.to_string(),
