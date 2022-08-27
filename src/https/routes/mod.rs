@@ -7,8 +7,11 @@ use rocket::*;
 
 #[get("/")]
 pub fn index() -> &'static str {
-    "Welcome to Basic Rust API\n\
-    The current routes are [/data]"
+    "Welcome to RustStore!\n\
+    The current routes are \n\
+    [/add/<path>/<data_name>/<data>]\n\
+    [/delete/<path>]\n\
+    [/read/<path>]"
 }
 
 
