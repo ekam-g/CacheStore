@@ -24,7 +24,7 @@ pub fn data_test(mut path: String) -> Json<DataPlaceHolder> {
         Err(error) => {
             println!("{}", error);
             Json(DataPlaceHolder {
-                data: vec![error.to_string()],
+                data: vec!["no data".to_string()],
                 error: error.to_string(),
             })
         }
