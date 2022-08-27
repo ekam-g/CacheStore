@@ -6,24 +6,26 @@ use crate::func::files;
 #[derive(Serialize)]
 pub struct DataPlaceHolder {
     data: Vec<String>,
-    error: bool,
+    error: String,
 }
 
-#[get("/data")]
-pub fn data_test() -> Json<DataPlaceHolder> {
-    let result = files::ReadData {}.read("src/database_func/cache.txt");
+#[get("/read/<path>")]
+pub fn data_test(mut path: String) -> Json<DataPlaceHolder> {
+    path = path.replace("`", "/");
+    path = "database/".to_string() + &*path + ".txt";
+    let result = files::ReadData {}.read(path);
     return match result {
         Ok(request) => {
             Json(DataPlaceHolder {
                 data: request,
-                error: false,
+                error: "Success".to_string(),
             })
         }
         Err(error) => {
             println!("{}", error);
             Json(DataPlaceHolder {
                 data: vec![error.to_string()],
-                error: true,
+                error: error.to_string(),
             })
         }
     };

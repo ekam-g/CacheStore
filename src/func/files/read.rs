@@ -5,7 +5,7 @@ use crate::func::files::ReadData;
 
 
 impl ReadData{
-    pub fn read(&self, path: &str) -> Result<Vec<String>, io::Error> {
+    pub fn read(&self, path: String) -> Result<Vec<String>, io::Error> {
         let file = File::open(path.to_string());
         let mut v: Vec<String> = Vec::new();
         match file {
