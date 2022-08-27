@@ -9,4 +9,6 @@ It is fast and it takes 2ms to return data. Also if you want to local store data
 ## How should i use it?
 use this project as a starting point for you own project and even try to give back by sending pull requests!
 
+## This is a work in progress!
+
 ```git clone https://github.com/carghai/RustStore```

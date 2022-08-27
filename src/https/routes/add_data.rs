@@ -1,4 +1,3 @@
-use std::io::{empty, Error};
 use rocket_contrib::json::Json;
 use serde::Serialize;
 use rocket::get;
@@ -12,7 +11,8 @@ pub struct Data {
 }
 
 #[get("/add/<path>/<data_name>/<data>")]
-pub fn add(path: String, data_name: String, data: String) -> Json<Data> {
+pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
+    path = path.replace("`", "/");
     let file_error = files::WriteData {}.normal(&data, &format!("{}/{}.txt", &path, &data_name));
     return match file_error {
         Ok(_) => {
