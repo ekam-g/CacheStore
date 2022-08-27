@@ -16,8 +16,7 @@ struct AddDataFunc();
 
 impl AddDataFunc {
     fn make_file(&self, data: String, path: String, data_name: String) -> Json<Data> {
-        let file_error = files::WriteData {}.replace(&data, &format!("{}/{}.txt", path, data_name));
-        drop(data);
+        let file_error = files::WriteData {}.drop_replace(data, format!("{}/{}.txt", path, data_name));
         return match file_error {
             Err(e) => {
                 Json(Data {
@@ -37,7 +36,7 @@ impl AddDataFunc {
 pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
     path = path.replace("`", "/");
     path = "database/".to_string() + &*path;
-    let file_error = files::WriteData {}.replace(&data, &format!("{}/{}.txt", &path, &data_name));
+    let file_error = files::WriteData {}.replace(&data, format!("{}/{}.txt", &path, &data_name));
     return match file_error {
         Ok(_) => {
             Json(Data {
@@ -48,7 +47,7 @@ pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
             let directory_error = fs::create_dir(&path);
             match directory_error {
                 Ok(_) => {
-                    let file_error = files::WriteData {}.replace(&data, &format!("{}/{}.txt", path, data_name));
+                    let file_error = files::WriteData {}.replace(&data, format!("{}/{}.txt", path, data_name));
                     match file_error {
                         Ok(_) => {
                             Json(Data {
