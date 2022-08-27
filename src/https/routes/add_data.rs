@@ -45,21 +45,9 @@ pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
         }
         Err(_) => {
             let directory_error = fs::create_dir(&path);
-            match directory_error {
+            return match directory_error {
                 Ok(_) => {
-                    let file_error = files::WriteData {}.replace(&data, format!("{}/{}.txt", path, data_name));
-                    match file_error {
-                        Ok(_) => {
-                            Json(Data {
-                                error: "Success".to_string(),
-                            })
-                        }
-                        Err(error) => {
-                            return Json(Data {
-                                error: error.to_string(),
-                            });
-                        }
-                    }
+                    AddDataFunc {}.make_file(data, path, data_name)
                 }
                 Err(_) => {
                     let full = path.replace("database/", "");
