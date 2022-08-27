@@ -32,6 +32,7 @@ impl AddDataFunc {
         };
     }
 }
+
 #[get("/add/<path>/<data_name>/<data>")]
 pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
     path = path.replace("`", "/");
@@ -54,32 +55,14 @@ pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
                                 error: "Success".to_string(),
                             })
                         }
-                        Err(_) => {
-                            // todo remove this code
-                            let where_file = path.split("`");
-                            for i in where_file {
-                                let directory_error = fs::create_dir(i);
-                                match directory_error {
-                                    Ok(_) => {}
-                                    Err(what) => {
-                                        match what.kind() {
-                                            ErrorKind::AlreadyExists => {}
-                                            other_error => {
-                                                return Json(Data {
-                                                    error: "Error".to_string(),
-                                                });
-                                            }
-                                        }
-                                    }
-                                };
-                            }
+                        Err(error) => {
                             return Json(Data {
-                                error: "success".to_string(),
+                                error: error.to_string(),
                             });
                         }
                     }
                 }
-                Err(error) => {
+                Err(_) => {
                     let full = path.replace("database/", "");
                     let where_file = full.split("/");
                     let mut location = "database/".to_string();
@@ -97,7 +80,7 @@ pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
                             }
                         };
                     }
-                   AddDataFunc{}.make_file(data, path, data_name)
+                    AddDataFunc {}.make_file(data, path, data_name)
                 }
             }
         }
