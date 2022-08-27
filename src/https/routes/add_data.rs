@@ -34,7 +34,7 @@ impl AddDataFunc {
 pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
     path = path.replace("`", "/");
     path = "database/".to_string() + &*path;
-    let file_error = files::WriteData {}.replace(&data, format!("{}/{}.txt", &path, &data_name));
+    let file_error = files::WriteData {}.normal(&data, format!("{}/{}.txt", &path, &data_name));
     return match file_error {
         Ok(_) => {
             Json(Data {
@@ -56,11 +56,7 @@ pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
                         let directory_error = fs::create_dir(&location);
                         match directory_error {
                             Ok(_) => {}
-                            Err(error) => {
-                                return Json(Data {
-                                    error: error.to_string(),
-                                });
-                            }
+                            Err(_) => {}
                         };
                     }
                     AddDataFunc {}.make_file(data, path, data_name)
