@@ -11,7 +11,7 @@ impl WriteData {
             .open(path);
         return WriteData {}.process(output, &data);
     }
-    pub fn replace(&self, data: String, path: &str) -> Result<(), Error> {
+    pub fn replace(&self, data: &String, path: &str) -> Result<(), Error> {
         let output = File::create(path);
         return WriteData {}.process(output, &data);
     }
