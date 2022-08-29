@@ -1,5 +1,6 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 #![feature(io_error_more)]
+#![allow(dead_code)]
 
 mod https;
 mod database_func;

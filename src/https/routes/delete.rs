@@ -2,7 +2,7 @@ use std::fs;
 use rocket_contrib::json::Json;
 use serde::Serialize;
 use rocket::get;
-use crate::func::files;
+
 
 #[derive(Serialize)]
 pub struct Data {
