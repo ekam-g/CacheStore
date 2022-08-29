@@ -9,8 +9,6 @@ use serde::{Serialize, Deserialize};
 pub struct MainParse {
     pub data: String,
 }
-
-
 //end
 
 impl Request {
