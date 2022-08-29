@@ -18,7 +18,6 @@ impl ReadData{
                         }
                         Err(e) => {
                             v.push(e.to_string());
-                            return Err(e);
                         }
                     }
                 }

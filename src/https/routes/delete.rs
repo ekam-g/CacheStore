@@ -5,6 +5,8 @@ use rocket::{get, State};
 
 use crate::https::StateData;
 
+use super::functions::path_second;
+
 
 #[derive(Serialize)]
 pub struct Data {
@@ -18,8 +20,7 @@ pub fn delete(mut path: String, api_key: String, api_state : State<StateData>) -
             error : "Not authorized".to_string()
         })
     }
-    path = path.replace("`", "/");
-    path = "database/".to_string() + &*path + ".txt";
+    path = path_second(path);
     let delete_error = fs::remove_file(path);
     match delete_error {
         Ok(_) => {

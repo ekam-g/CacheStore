@@ -1,6 +1,7 @@
 pub mod display_data;
 pub mod add_data;
 pub mod delete;
+pub mod functions;
 
 use rocket::*;
 

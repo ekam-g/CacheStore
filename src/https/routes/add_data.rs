@@ -4,6 +4,8 @@ use rocket::get;
 use crate::{func::files, https::{State, StateData}};
 use std::fs;
 
+use super::functions::path_second;
+
 
 #[derive(Serialize)]
 pub struct Data {
@@ -37,8 +39,7 @@ pub fn add(mut path: String, data_name: String, data: String, api_key : String, 
             error : "Not authorized".to_string()
         })
     }
-    path = path.replace("`", "/");
-    path = "database/".to_string() + &*path;
+    path = path_second(path);
     let file_error = files::WriteData {}.normal(&data, format!("{}/{}.txt", &path, &data_name));
     return match file_error {
         Ok(_) => {
