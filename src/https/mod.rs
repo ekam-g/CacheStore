@@ -14,6 +14,10 @@ impl Web {
         let state  = StateData{
             api_key : "your_api_key".to_string()
         };
+        tokio::spawn(async {
+            database_func::Func {}.example().await;
+            // use this if you want to spawn aync funtions to modify values in state
+         });
         ignite()
         .manage(state)
             .mount(
