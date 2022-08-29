@@ -1,7 +1,7 @@
 pub mod routes;
 
 use rocket::*;
-
+use crate::database_func;
 
 pub struct Web {}
 
