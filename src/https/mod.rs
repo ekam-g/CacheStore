@@ -13,6 +13,7 @@ impl Web {
     pub fn start(&self) {
         let state  = StateData{
             api_key : "your_api_key".to_string()
+            //TODO when using this please write an api key
         };
         tokio::spawn(async {
             database_func::Func {}.example().await;
