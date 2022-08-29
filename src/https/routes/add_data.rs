@@ -1,7 +1,7 @@
 use rocket_contrib::json::Json;
 use serde::Serialize;
 use rocket::get;
-use crate::func::files;
+use crate::{func::files, https::{State, StateData}};
 use std::fs;
 
 
@@ -30,8 +30,13 @@ impl AddDataFunc {
     }
 }
 
-#[get("/add/<path>/<data_name>/<data>")]
-pub fn add(mut path: String, data_name: String, data: String) -> Json<Data> {
+#[get("/add/<path>/<data_name>/<data>/<api_key>")]
+pub fn add(mut path: String, data_name: String, data: String, api_key : String, api_state: State<StateData>) -> Json<Data> {
+    if api_key != api_state.api_key{
+        return Json(Data{
+            error : "Not authorized".to_string()
+        })
+    }
     path = path.replace("`", "/");
     path = "database/".to_string() + &*path;
     let file_error = files::WriteData {}.normal(&data, format!("{}/{}.txt", &path, &data_name));

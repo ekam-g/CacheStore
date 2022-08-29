@@ -1,7 +1,7 @@
 use rocket_contrib::json::Json;
 use serde::Serialize;
-use rocket::get;
-use crate::func::files;
+use rocket::{get, State};
+use crate::{func::files, https::StateData};
 
 #[derive(Serialize)]
 pub struct DataPlaceHolder {
@@ -9,8 +9,14 @@ pub struct DataPlaceHolder {
     error: String,
 }
 
-#[get("/read/<path>")]
-pub fn data_test(mut path: String) -> Json<DataPlaceHolder> {
+#[get("/read/<path>/<api_key>")]
+pub fn data_test(mut path: String, api_key: String, api_state: State<StateData>) -> Json<DataPlaceHolder> {
+    if api_key != api_state.api_key{
+        return Json(DataPlaceHolder{
+            data :  vec!["no data".to_string()],
+            error : "Not authorized".to_string()
+        })
+    }
     path = path.replace("`", "/");
     path = "database/".to_string() + &*path + ".txt";
     let result = files::ReadData {}.read(path);
