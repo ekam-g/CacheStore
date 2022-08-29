@@ -8,8 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/database/worked/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/worked/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/database/worked/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/https/routes/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,14 +164,7 @@
       <workItem from="1661607688374" duration="5470000" />
       <workItem from="1661617822260" duration="5359000" />
       <workItem from="1661629975525" duration="2896000" />
-      <workItem from="1661639712729" duration="409000" />
-    </task>
-    <task id="LOCAL-00009" summary="almost done">
-      <created>1661060311300</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1661060311300</updated>
+      <workItem from="1661639712729" duration="1440000" />
     </task>
     <task id="LOCAL-00010" summary="done">
       <created>1661087949572</created>
@@ -509,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661632677733</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="index page work">
+      <created>1661640175199</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1661640175199</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +528,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="clean up and faster" />
     <MESSAGE value="speed" />
     <MESSAGE value="async stuff" />
     <MESSAGE value="https added" />
@@ -553,7 +552,8 @@
     <MESSAGE value="read done" />
     <MESSAGE value="some error hanling stuff" />
     <MESSAGE value="delete done" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete done" />
+    <MESSAGE value="index page work" />
+    <option name="LAST_COMMIT_MESSAGE" value="index page work" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

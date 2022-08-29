@@ -9,9 +9,11 @@ use rocket::*;
 pub fn index() -> &'static str {
     "Welcome to RustStore!\n\
     The current routes are \n\
-    [/add/<path>/<data_name>/<data>]\n\
-    [/delete/<path>]\n\
-    [/read/<path>]"
+    => GET / (index) \n\
+    => GET /read/<path> (read data)\n\
+    => GET /add/<path>/<data_name>/<data> (add data)\n\
+    => GET /delete/<path> (delete data)\n\
+    "
 }
 
 
