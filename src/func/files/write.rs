@@ -1,7 +1,7 @@
+use crate::func::files;
+use files::WriteData;
 use std::fs::{File, OpenOptions};
 use std::io::{Error, Write};
-use files::WriteData;
-use crate::func::files;
 
 impl WriteData {
     pub fn drop_normal(&self, data: String, path: String) -> Result<(), Error> {
@@ -11,10 +11,7 @@ impl WriteData {
         WriteData {}.replace(&data, path)
     }
     pub fn normal(&self, data: &String, path: String) -> Result<(), Error> {
-        let output = OpenOptions::new()
-            .write(true)
-            .append(true)
-            .open(path);
+        let output = OpenOptions::new().write(true).append(true).open(path);
         return WriteData {}.process(output, &data);
     }
     pub fn replace(&self, data: &String, path: String) -> Result<(), Error> {
@@ -27,17 +24,11 @@ impl WriteData {
                 let error = write!(file, "{}\n", data);
                 file.flush()?;
                 match error {
-                    Ok(..) => {
-                        Ok(())
-                    }
-                    Err(e) => {
-                        Err(e)
-                    }
+                    Ok(..) => Ok(()),
+                    Err(e) => Err(e),
                 }
             }
-            Err(e) => {
-                Err(e)
-            }
+            Err(e) => Err(e),
         };
     }
 }
