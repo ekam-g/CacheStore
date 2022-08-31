@@ -11,7 +11,9 @@ mod test {
                 panic!("Make Sure Main Code is running\n\n {}", e)
             }
             Ok(data) => {
-                assert!(data.error == "Success");
+                if data.error != "Success" {
+                    panic!("{}", data.error);
+                }
             }
         }
     }
