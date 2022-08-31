@@ -1,10 +1,10 @@
-pub mod display_data;
 pub mod add_data;
 pub mod delete;
+pub mod display_data;
 pub mod functions;
+mod tests;
 
 use rocket::*;
-
 
 #[get("/")]
 pub fn index() -> &'static str {
@@ -16,6 +16,3 @@ pub fn index() -> &'static str {
     => GET /delete/<path>/<api_key> (delete data)\n\
     "
 }
-
-
-
