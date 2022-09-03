@@ -90,6 +90,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "904dfeac50f3cdaba28fc6f57fdcddb75f49ed61346676a78c4ffe55877802fd"
 
 [[package]]
+name = "better_file_maker"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b53cfb53373571bd626b8193c41eeeda4a19a3a30080eb4eb87d1e089812a8b0"
+
+[[package]]
 name = "bitflags"
 version = "1.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1204,12 +1210,14 @@ dependencies = [
 name = "rust_database"
 version = "0.1.0"
 dependencies = [
+ "better_file_maker",
  "reqwest",
  "rocket",
  "rocket_contrib",
  "serde",
  "serde_json",
  "tokio",
+ "txt_writer",
 ]
 
 [[package]]
@@ -1538,6 +1546,12 @@ name = "try-lock"
 version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "59547bce71d9c38b83d9c0e92b6066c4253371f15005def0c30d9657f50c7642"
+
+[[package]]
+name = "txt_writer"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "de4ae355dc0379b0b54035f55e04107a701dfc292052e18347a2db5b492521c0"
 
 [[package]]
 name = "typeable"

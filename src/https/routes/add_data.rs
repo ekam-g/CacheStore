@@ -1,11 +1,9 @@
-use crate::{
-    func::files,
-    https::{State, StateData},
-};
+use crate::https::{State, StateData};
+use better_file_maker;
 use rocket::get;
 use rocket_contrib::json::Json;
 use serde::Serialize;
-use std::fs;
+use txt_writer;
 
 use super::functions::path_second;
 
@@ -19,7 +17,7 @@ struct AddDataFunc();
 impl AddDataFunc {
     fn make_file(&self, data: String, path: String, data_name: String) -> Json<Data> {
         let file_error =
-            files::WriteData {}.drop_replace(data, format!("{}/{}.txt", path, data_name));
+            txt_writer::WriteData {}.drop_replace(data, format!("{}/{}.txt", path, data_name));
         return match file_error {
             Err(e) => Json(Data {
                 error: e.to_string(),
@@ -33,7 +31,7 @@ impl AddDataFunc {
 
 #[get("/add/<path>/<data_name>/<data>/<api_key>")]
 pub fn add(
-    mut path: String,
+    path: String,
     data_name: String,
     data: String,
     api_key: String,
@@ -44,31 +42,17 @@ pub fn add(
             error: "Not authorized".to_string(),
         });
     }
-    path = path_second(path);
-    let file_error = files::WriteData {}.normal(&data, format!("{}/{}.txt", &path, &data_name));
+    let final_path = path_second(path);
+    let file_error =
+        txt_writer::WriteData {}.add(&data, format!("{}/{}.txt", &final_path, &data_name));
     return match file_error {
         Ok(_) => Json(Data {
             error: "Success".to_string(),
         }),
         Err(_) => {
-            let directory_error = fs::create_dir(&path);
-            return match directory_error {
-                Ok(_) => AddDataFunc {}.make_file(data, path, data_name),
-                Err(_) => {
-                    let full: String = path.replace("database/", "");
-                    let where_file = full.split("/");
-                    let mut location: String = "database/".to_string();
-                    for i in where_file {
-                        location = location + i + "/";
-                        let directory_error = fs::create_dir(&location);
-                        match directory_error {
-                            Ok(_) => {}
-                            Err(_) => {}
-                        };
-                    }
-                    AddDataFunc {}.make_file(data, path, data_name)
-                }
-            };
+            // TODO await a better function to release
+            let _ = better_file_maker::make_folders(final_path.clone());
+            AddDataFunc {}.make_file(data, final_path, data_name)
         }
     };
 }

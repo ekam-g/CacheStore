@@ -1,5 +1,5 @@
 use super::functions::path_second;
-use crate::{func::files, https::StateData};
+use crate::https::StateData;
 use rocket::{get, State};
 use rocket_contrib::json::Json;
 use serde::Serialize;
@@ -24,7 +24,7 @@ pub fn data_test(
     }
     path = path_second(path);
     path = path + ".txt";
-    let result = files::ReadData {}.read(path);
+    let result = txt_writer::ReadData {}.read(path);
     return match result {
         Ok(request) => Json(DataPlaceHolder {
             data: request,

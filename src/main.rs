@@ -1,5 +1,4 @@
 #![feature(proc_macro_hygiene, decl_macro)]
-#![allow(dead_code)]
 
 mod database_func;
 mod func;
