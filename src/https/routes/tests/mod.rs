@@ -33,6 +33,11 @@ mod test {
     #[tokio::test]
     async fn read_data_test() {
         thread::sleep(time::Duration::from_secs(2));
+        test_url("http://localhost:8000/read/test`worked`data/your_api_key".to_string()).await;
+    }
+    #[tokio::test]
+    async fn read_data_test_many() {
+        thread::sleep(time::Duration::from_secs(2));
         let data = http_request::Request::read_more(
             "http://localhost:8000/read/test`worked`data/your_api_key".to_string(),
         )
