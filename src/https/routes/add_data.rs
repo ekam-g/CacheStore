@@ -51,7 +51,7 @@ pub fn add(
         }),
         Err(_) => {
             // TODO await a better function to release
-            let _ = better_file_maker::make_folders(final_path.clone());
+            let _ = better_file_maker::make_folders(&final_path);
             AddDataFunc {}.make_file(data, final_path, data_name)
         }
     };
