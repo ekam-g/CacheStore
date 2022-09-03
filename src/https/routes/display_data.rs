@@ -11,7 +11,7 @@ pub struct DataPlaceHolder {
 }
 
 #[get("/read/<path>/<api_key>")]
-pub fn data_test(
+pub fn read(
     mut path: String,
     api_key: String,
     api_state: State<StateData>,

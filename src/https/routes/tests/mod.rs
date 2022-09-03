@@ -1,6 +1,6 @@
 #![cfg(test)]
 
-mod test {
+mod test { 
     use crate::func::http_request;
     use core::time;
     use std::thread::{self};
@@ -57,5 +57,17 @@ mod test {
         thread::sleep(time::Duration::from_secs(3));
         test_url("http://localhost:8000/delete/test`worked`data.txt//your_api_key".to_string())
             .await;
+    }
+    #[tokio::test]
+    async fn delete_data_test_check() {
+        thread::sleep(time::Duration::from_secs(4));
+        let data = http_request::Request::read(
+            "http://localhost:8000/read/test`worked`data/your_api_key".to_string(),
+        )
+        .await
+        .expect("");
+        if data.error == "Success" {
+            panic!("data was not deleted")
+        }
     }
 }

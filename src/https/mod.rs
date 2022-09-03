@@ -24,7 +24,7 @@ impl Web {
                 "/",
                 routes![
                     routes::index,
-                    routes::display_data::data_test,
+                    routes::display_data::read,
                     routes::add_data::add,
                     routes::delete::delete
                 ],
