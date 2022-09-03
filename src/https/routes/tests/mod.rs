@@ -32,7 +32,7 @@ mod test {
     }
     #[tokio::test]
     async fn read_data_test() {
-        thread::sleep(time::Duration::from_secs(2));
+        thread::sleep(time::Duration::from_secs(1));
         test_url("http://localhost:8000/read/test`worked`data/your_api_key".to_string()).await;
     }
     #[tokio::test]
