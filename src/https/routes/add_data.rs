@@ -69,14 +69,14 @@ pub fn add(
             let writing_error = txt_writer::WriteData {}
                 .replace(&data, format!("{}/{}.txt", &final_path, &data_name));
             match writing_error {
-                Err(_) => {
-                    let _ = better_file_maker::make_folders(&final_path);
-                    return AddDataFunc {}.make_file(data, final_path, data_name);
-                }
                 Ok(_) => {
                     return Json(Data {
                         error: "Success".to_string(),
                     })
+                }
+                Err(_) => {
+                    let _ = better_file_maker::make_folders(&final_path);
+                    return AddDataFunc {}.make_file(data, final_path, data_name);
                 }
             }
         }
