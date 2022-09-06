@@ -12,8 +12,8 @@ pub struct Data {
     error: String,
 }
 
-#[get("/delete_txt/<path>/<api_key>")]
-pub fn delete_txt(mut path: String, api_key: String, api_state: State<StateData>) -> Json<Data> {
+#[get("/null_write/<path>/<api_key>")]
+pub fn null_write(mut path: String, api_key: String, api_state: State<StateData>) -> Json<Data> {
     if api_key != api_state.api_key {
         return Json(Data {
             error: "Not authorized".to_string(),

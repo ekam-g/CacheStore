@@ -29,7 +29,7 @@ impl Web {
                     routes::display_data::read,
                     routes::add_data::add,
                     routes::delete::delete,
-                    routes::delete_txt::delete_txt,
+                    routes::null_write::null_write,
                 ],
             )
             .launch();
