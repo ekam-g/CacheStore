@@ -4,12 +4,7 @@ mod database_func;
 mod func;
 mod https;
 
-#[tokio::main]
-async fn main() {
-    tokio::spawn(async {
-        database_func::Func {}.example().await;
-        // use this if you want to spawn aync funtions that don't modify https funtions
-    });
+fn main() {
     https::Web {}.start();
 }
 
