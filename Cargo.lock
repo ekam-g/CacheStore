@@ -91,9 +91,9 @@ checksum = "904dfeac50f3cdaba28fc6f57fdcddb75f49ed61346676a78c4ffe55877802fd"
 
 [[package]]
 name = "better_file_maker"
-version = "0.1.4"
+version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9b71d28cb9dbe57b2d881c7f3d161a56b8f3f805380ea515b7f5750a9db8007b"
+checksum = "42e0a5187edbabf502318cffbdc887a591b08d6b799e6dfd6063ff28f3db7423"
 
 [[package]]
 name = "bitflags"

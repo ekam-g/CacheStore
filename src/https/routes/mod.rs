@@ -1,5 +1,6 @@
 pub mod add_data;
 pub mod delete;
+pub mod delete_txt;
 pub mod display_data;
 pub mod functions;
 mod tests;

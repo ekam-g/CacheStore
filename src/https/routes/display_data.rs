@@ -26,10 +26,19 @@ pub fn read(
     path = path + ".txt";
     let result = txt_writer::ReadData {}.read(path);
     return match result {
-        Ok(request) => Json(DataPlaceHolder {
-            data: request,
-            error: "Success".to_string(),
-        }),
+        Ok(request) => {
+            if request[0] == api_state.null {
+                return Json(DataPlaceHolder {
+                    data: vec!["null".to_string()],
+                    error: "data is null".to_string(),
+                });
+            } else {
+                return Json(DataPlaceHolder {
+                    data: request,
+                    error: "Success".to_string(),
+                });
+            }
+        }
         Err(error) => {
             println!("{}", error);
             Json(DataPlaceHolder {
