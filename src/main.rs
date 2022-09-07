@@ -8,12 +8,18 @@ pub struct StateData {
     null: String,
 }
 
+impl StateData {
+    pub fn start(self) {
+        https::Web {}.start(self);
+    }
+}
+
 fn main() {
-    let init_val = StateData {
-        api_key: "your_api_key".to_string(), //TODO when using this please write an api key
+    StateData {
+        api_key: "your_api_key".to_string(),
         null: "null_nil_value_key:345n,234lj52".to_string(),
-    };
-    https::Web {}.start(init_val);
+    }
+    .start()
 }
 
 // rustup override set nightly
