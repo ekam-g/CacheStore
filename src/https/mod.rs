@@ -4,19 +4,10 @@ use rocket::*;
 
 pub struct Web {}
 
-pub struct StateData {
-    api_key: String,
-    null: String,
-}
-
 impl Web {
-    pub fn start(&self) {
-        let state = StateData {
-            api_key: "your_api_key".to_string(), //TODO when using this please write an api key
-            null: "null_nil_value_key:345n,234lj52".to_string(),
-        };
+    pub fn start(&self, init_val: crate::StateData) {
         ignite()
-            .manage(state)
+            .manage(init_val)
             .mount(
                 "/",
                 routes![

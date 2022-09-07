@@ -3,8 +3,6 @@ use rocket_contrib::json::Json;
 use serde::Serialize;
 use txt_writer;
 
-use crate::https::StateData;
-
 use super::functions::path_second;
 
 #[derive(Serialize)]
@@ -29,7 +27,7 @@ impl NullFunc {
 }
 
 #[get("/null_write/<path>/<api_key>")]
-pub fn null_write(path: String, api_key: String, api_state: State<StateData>) -> Json<Data> {
+pub fn null_write(path: String, api_key: String, api_state: State<crate::StateData>) -> Json<Data> {
     if api_key != api_state.api_key {
         return Json(Data {
             error: "Not authorized".to_string(),

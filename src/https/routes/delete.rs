@@ -3,8 +3,6 @@ use rocket_contrib::json::Json;
 use serde::Serialize;
 use std::fs;
 
-use crate::https::StateData;
-
 use super::functions::path_second;
 
 #[derive(Serialize)]
@@ -28,7 +26,7 @@ impl DeleteFunc {
 }
 
 #[get("/delete/<path>/<api_key>")]
-pub fn delete(path: String, api_key: String, api_state: State<StateData>) -> Json<Data> {
+pub fn delete(path: String, api_key: String, api_state: State<crate::StateData>) -> Json<Data> {
     if api_key != api_state.api_key {
         return Json(Data {
             error: "Not authorized".to_string(),

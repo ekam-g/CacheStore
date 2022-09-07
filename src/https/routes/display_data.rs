@@ -1,5 +1,4 @@
 use super::functions::path_second;
-use crate::https::StateData;
 use rocket::{get, State};
 use rocket_contrib::json::Json;
 use serde::Serialize;
@@ -45,7 +44,7 @@ impl DisplayFunc {
 pub fn read(
     mut path: String,
     api_key: String,
-    api_state: State<StateData>,
+    api_state: State<crate::StateData>,
 ) -> Json<DataPlaceHolder> {
     if api_key != api_state.api_key {
         return Json(DataPlaceHolder {

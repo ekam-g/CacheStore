@@ -1,4 +1,4 @@
-use crate::https::{State, StateData};
+use crate::https::State;
 use better_file_maker;
 use rocket::get;
 use rocket_contrib::json::Json;
@@ -82,7 +82,7 @@ pub fn add(
     data_name: String,
     data: String,
     api_key: String,
-    api_state: State<StateData>,
+    api_state: State<crate::StateData>,
 ) -> Json<Data> {
     if api_key != api_state.api_key {
         return Json(Data {
