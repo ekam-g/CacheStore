@@ -52,6 +52,6 @@ pub fn read(
             error: "Not authorized".to_string(),
         });
     }
-    path = path_second(path);
+    path = path_second(path, api_state.data_storage_location.to_string());
     return DisplayFunc {}.core(path, api_state.null.to_string());
 }

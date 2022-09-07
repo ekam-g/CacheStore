@@ -32,6 +32,6 @@ pub fn delete(path: String, api_key: String, api_state: State<crate::StateData>)
             error: "Not authorized".to_string(),
         });
     }
-    let final_path = path_second(path);
+    let final_path = path_second(path, api_state.data_storage_location.to_string());
     return DeleteFunc {}.main_func(final_path);
 }

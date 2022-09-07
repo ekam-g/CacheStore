@@ -89,6 +89,6 @@ pub fn add(
             error: "Not authorized".to_string(),
         });
     }
-    let final_path = path_second(path);
+    let final_path = path_second(path, api_state.data_storage_location.to_string());
     return AddDataFunc {}.core(final_path, data_name, data, api_state.null.to_string());
 }

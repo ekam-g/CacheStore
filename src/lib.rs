@@ -10,7 +10,9 @@ mod https;
 pub struct StateData {
     api_key: String,
     null: String,
+    data_storage_location: String,
 }
+
 impl StateData {
     pub fn start(self) {
         https::Web {}.start(self);

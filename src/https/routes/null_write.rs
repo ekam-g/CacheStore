@@ -33,6 +33,6 @@ pub fn null_write(path: String, api_key: String, api_state: State<crate::StateDa
             error: "Not authorized".to_string(),
         });
     }
-    let final_path = path_second(path);
+    let final_path = path_second(path, api_state.data_storage_location.to_string());
     return NullFunc {}.core(api_state.null.to_string(), final_path);
 }
