@@ -10,7 +10,7 @@ pub struct StateData {
 }
 
 impl StateData {
-    pub fn start(self) {
+    pub fn start_database_online(self) {
         https::Web {}.start(self);
     }
 }
@@ -21,7 +21,7 @@ fn main() {
         null: "null_nil_value_key:345n,234lj52".to_string(),
         data_storage_location: "database/".to_string(),
     }
-    .start()
+    .start_database_online()
 }
 
 // rustup override set nightly

@@ -12,3 +12,5 @@ use this project as a starting point for you own project and even try to give ba
 ## This is a work in progress!
 
 ```git clone https://github.com/carghai/RustStore```
+
+## Relase Soon!
