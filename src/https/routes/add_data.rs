@@ -27,6 +27,53 @@ impl AddDataFunc {
             }),
         };
     }
+    fn core(
+        &self,
+        final_path: String,
+        data_name: String,
+        data: String,
+        null_key: String,
+    ) -> Json<Data> {
+        let file_error =
+            txt_writer::ReadData {}.read(format!("{}/{}.txt", &final_path, &data_name));
+        return match file_error {
+            Ok(read_data) => {
+                if read_data[0] != null_key {
+                    let error = txt_writer::WriteData {}
+                        .drop_add(data, format!("{}/{}.txt", final_path, data_name));
+                    match error {
+                        Ok(_) => Json(Data {
+                            error: "Success".to_string(),
+                        }),
+                        Err(e) => Json(Data {
+                            error: e.to_string(),
+                        }),
+                    }
+                } else {
+                    return AddDataFunc {}.make_file(data, final_path, data_name);
+                }
+            }
+            Err(_) => {
+                let writing_error = txt_writer::WriteData {}
+                    .replace(&data, format!("{}/{}.txt", &final_path, &data_name));
+                match writing_error {
+                    Ok(_) => Json(Data {
+                        error: "Success".to_string(),
+                    }),
+                    Err(_) => {
+                        let file_error = better_file_maker::make_folders(&final_path);
+                        match file_error {
+                            Ok(_) => AddDataFunc {}.make_file(data, final_path, data_name),
+
+                            Err(e) => Json(Data {
+                                error: e.to_string(),
+                            }),
+                        }
+                    }
+                }
+            }
+        };
+    }
 }
 
 #[get("/add/<path>/<data_name>/<data>/<api_key>")]
@@ -43,42 +90,5 @@ pub fn add(
         });
     }
     let final_path = path_second(path);
-    let file_error = txt_writer::ReadData {}.read(format!("{}/{}.txt", &final_path, &data_name));
-    match file_error {
-        Ok(read_data) => {
-            if read_data[0] != api_state.null {
-                let error = txt_writer::WriteData {}
-                    .drop_add(data, format!("{}/{}.txt", final_path, data_name));
-                match error {
-                    Ok(_) => {
-                        return Json(Data {
-                            error: "Success".to_string(),
-                        })
-                    }
-                    Err(e) => {
-                        return Json(Data {
-                            error: e.to_string(),
-                        })
-                    }
-                }
-            } else {
-                return AddDataFunc {}.make_file(data, final_path, data_name);
-            }
-        }
-        Err(_) => {
-            let writing_error = txt_writer::WriteData {}
-                .replace(&data, format!("{}/{}.txt", &final_path, &data_name));
-            match writing_error {
-                Ok(_) => {
-                    return Json(Data {
-                        error: "Success".to_string(),
-                    })
-                }
-                Err(_) => {
-                    let _ = better_file_maker::make_folders(&final_path);
-                    return AddDataFunc {}.make_file(data, final_path, data_name);
-                }
-            }
-        }
-    };
+    return AddDataFunc {}.core(final_path, data_name, data, api_state.null.to_string());
 }
