@@ -1,14 +1,12 @@
 # Welcome To Rust Database!
 
-# what is this?
+## what is this?
 
 this is a database for you to git clone and use in your project!
 
-# why should i use it?
+## why should i use it?
 
 It is fast and it takes 2ms to return data. Also if you want to local store data on your pc of your users then you may want to use it.
-
-# How should i use it?
 
 ## Start the online database
 
@@ -31,11 +29,13 @@ fn main() {
 
 ## What requests can you do?
 
+```
 => GET / (index)
 => GET /read/<path>/<api_key> (read)
 => GET /add/<path>/<data_name>/<data>/<api_key> (add)
 => GET /delete/<path>/<api_key> (delete)
 => GET /null_write/<path>/<api_key> (null_write)
+```
 
 ## How can you use it?
 
@@ -71,4 +71,16 @@ Info on api
 http://localhost:8000/
 ```
 
-# How Does this database write data
+# Questions?
+
+## How Does this database write data?
+
+This database uses txt instead of csv or json because txt is the fastest way to read and write data.
+
+## How Does it organize data?
+
+This database uses a directory way just like you would do on a computer. This storage method automatically make files for you too!
+
+## Still have questions?
+
+Dm me in discord at Carghai88#1468
