@@ -81,6 +81,36 @@ This database uses txt instead of csv or json because txt is the fastest way to 
 
 This database uses a directory way just like you would do on a computer. This storage method automatically make files for you too!
 
+## How Does it read data?
+
+This database requires your to put a directory (if you want to use  a "/" use a "`" instead) and it return txt value by reading it line by line (a vec value). 
+
+## How does this database value handle null?
+
+This database has a write null feature to write a null key. If the null key is read when your read a txt it returns
+
+```
+{
+    "data" : "null"
+    "error" : "data is null"
+}
+```
+make sure to handle error and check if error value equals "Success".
+
+## Error Handling? 
+
+If the database work just as planned it returns
+```
+{
+    "error" : "Success"
+}
+```
+otherwise it shows the error it received. 
+
 ## Still have questions?
 
 Dm me in discord at Carghai88#1468
+
+## What To do a Pull Request?
+
+I will respond as fast as possible just make sure it follows my ideology of speed!
