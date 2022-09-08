@@ -1207,7 +1207,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "rust_database"
+name = "rust_store"
 version = "0.1.0"
 dependencies = [
  "better_file_maker",

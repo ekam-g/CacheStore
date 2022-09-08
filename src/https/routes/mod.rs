@@ -1,8 +1,8 @@
 pub mod add_data;
 pub mod delete;
-pub mod null_write;
 pub mod display_data;
 pub mod functions;
+pub mod null_write;
 mod tests;
 
 use rocket::*;
@@ -15,5 +15,6 @@ pub fn index() -> &'static str {
     => GET /read/<path>/<api_key> (read data)\n\
     => GET /add/<path>/<data_name>/<data>/<api_key> (add data)\n\
     => GET /delete/<path>/<api_key> (delete data)\n\
+    => GET /null_write/<path>/<api_key> (null_write)\n\
     "
 }
