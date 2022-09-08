@@ -17,4 +17,7 @@ impl StateData {
     pub fn start_database_online(self) {
         https::Web {}.start(self);
     }
+    pub fn read(self){
+        
+    }
 }

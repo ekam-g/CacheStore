@@ -55,7 +55,7 @@ mod test {
     #[tokio::test]
     async fn delete_data_test() {
         thread::sleep(time::Duration::from_secs(3));
-        test_url("http://localhost:8000/delete/test`worked`data.txt//your_api_key".to_string())
+        test_url("http://localhost:8000/delete/test`worked`data.txt/your_api_key".to_string())
             .await;
     }
     #[tokio::test]
@@ -73,7 +73,7 @@ mod test {
     #[tokio::test]
     async fn null_test() {
         thread::sleep(time::Duration::from_secs(5));
-        test_url("http://localhost:8000/null_write/test`worked`data.txt//your_api_key".to_string())
+        test_url("http://localhost:8000/null_write/test`worked`data.txt/your_api_key".to_string())
             .await;
     }
     #[tokio::test]
@@ -89,7 +89,7 @@ mod test {
     async fn read_data_test_null() {
         thread::sleep(time::Duration::from_secs(7));
         test_url("http://localhost:8000/read/test`worked`data/your_api_key".to_string()).await;
-        test_url("http://localhost:8000/delete/test`worked`data.txt//your_api_key".to_string())
+        test_url("http://localhost:8000/delete/test`worked`data.txt/your_api_key".to_string())
             .await;
     }
 }
