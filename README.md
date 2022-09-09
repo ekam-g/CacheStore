@@ -1,10 +1,10 @@
 # Welcome To Rust Database!
 
-## what is this?
+## What is this?
 
 this is a database for you to git clone and use in your project!
 
-## why should i use it?
+## Why should i use it?
 
 It is fast and it takes 2ms to return data. Also if you want to local store data on your pc of your users then you may want to use it.
 
@@ -111,6 +111,6 @@ otherwise it shows the error it received.
 
 Dm me in discord at Carghai88#1468
 
-## What To do a Pull Request?
+## Pull Requests?
 
 I will respond as fast as possible just make sure it follows my ideology of speed!
