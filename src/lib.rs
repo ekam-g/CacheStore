@@ -17,7 +17,20 @@ impl StateData {
     pub fn start_database_online(self) {
         https::Web {}.start(self);
     }
-    pub fn read(self){
-        
+    pub fn write_data(&self, data: String, path: String, data_name: String) -> Result<(), String> {
+        let final_path: String = format!("{}{}", self.data_storage_location, path);
+        drop(path);
+        let read_data = https::routes::add_data::AddDataFunc {}.core(
+            final_path,
+            data_name,
+            data,
+            self.api_key.to_string(),
+        );
+        if read_data.error == "Success" {
+            Ok(())
+        } else {
+            Err(read_data.error)
+        }
     }
+    
 }

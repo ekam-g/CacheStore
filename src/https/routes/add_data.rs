@@ -9,10 +9,10 @@ use super::functions::path_second;
 
 #[derive(Serialize)]
 pub struct Data {
-    error: String,
+    pub error: String,
 }
 
-struct AddDataFunc();
+pub struct AddDataFunc();
 
 impl AddDataFunc {
     fn make_file(&self, data: String, path: String, data_name: String) -> Json<Data> {
@@ -27,13 +27,25 @@ impl AddDataFunc {
             }),
         };
     }
-    fn core(
+    fn make_file_struct(&self, data: String, path: String, data_name: String) -> Data {
+        let file_error =
+            txt_writer::WriteData {}.drop_replace(data, format!("{}/{}.txt", path, data_name));
+        return match file_error {
+            Err(e) => Data {
+                error: e.to_string(),
+            },
+            Ok(_) => Data {
+                error: "Success".to_string(),
+            },
+        };
+    }
+    pub fn core(
         &self,
         final_path: String,
         data_name: String,
         data: String,
         null_key: String,
-    ) -> Json<Data> {
+    ) -> Data {
         let file_error =
             txt_writer::ReadData {}.read(format!("{}/{}.txt", &final_path, &data_name));
         return match file_error {
@@ -42,32 +54,32 @@ impl AddDataFunc {
                     let error = txt_writer::WriteData {}
                         .drop_add(data, format!("{}/{}.txt", final_path, data_name));
                     match error {
-                        Ok(_) => Json(Data {
+                        Ok(_) => Data {
                             error: "Success".to_string(),
-                        }),
-                        Err(e) => Json(Data {
+                        },
+                        Err(e) => Data {
                             error: e.to_string(),
-                        }),
+                        },
                     }
                 } else {
-                    return AddDataFunc {}.make_file(data, final_path, data_name);
+                    return AddDataFunc {}.make_file_struct(data, final_path, data_name);
                 }
             }
             Err(_) => {
                 let writing_error = txt_writer::WriteData {}
                     .replace(&data, format!("{}/{}.txt", &final_path, &data_name));
                 match writing_error {
-                    Ok(_) => Json(Data {
+                    Ok(_) => Data {
                         error: "Success".to_string(),
-                    }),
+                    },
                     Err(_) => {
                         let file_error = better_file_maker::make_folders(&final_path);
                         match file_error {
-                            Ok(_) => AddDataFunc {}.make_file(data, final_path, data_name),
+                            Ok(_) => AddDataFunc {}.make_file_struct(data, final_path, data_name),
 
-                            Err(e) => Json(Data {
+                            Err(e) => Data {
                                 error: e.to_string(),
-                            }),
+                            },
                         }
                     }
                 }
@@ -90,5 +102,5 @@ pub fn add(
         });
     }
     let final_path = path_second(path, api_state.data_storage_location.to_string());
-    return AddDataFunc {}.core(final_path, data_name, data, api_state.null.to_string());
+    return Json(AddDataFunc {}.core(final_path, data_name, data, api_state.null.to_string()));
 }
