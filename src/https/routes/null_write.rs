@@ -7,21 +7,21 @@ use super::functions::path_second;
 
 #[derive(Serialize)]
 pub struct Data {
-    error: String,
+    pub error: String,
 }
 
-struct NullFunc {}
+pub struct NullFunc {}
 
 impl NullFunc {
-    fn core(&self, null_key: String, path: String) -> Json<Data> {
+    pub fn core(&self, null_key: String, path: String) -> Data {
         let delete_error = txt_writer::WriteData {}.replace(&null_key.to_string(), path);
         match delete_error {
-            Ok(_) => Json(Data {
+            Ok(_) => Data {
                 error: "Success".to_string(),
-            }),
-            Err(error) => Json(Data {
+            },
+            Err(error) => Data {
                 error: error.to_string(),
-            }),
+            },
         }
     }
 }
@@ -34,5 +34,5 @@ pub fn null_write(path: String, api_key: String, api_state: State<crate::StateDa
         });
     }
     let final_path = path_second(path, api_state.data_storage_location.to_string());
-    return NullFunc {}.core(api_state.null.to_string(), final_path);
+    return Json(NullFunc {}.core(api_state.null.to_string(), final_path));
 }

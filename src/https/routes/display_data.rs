@@ -5,36 +5,36 @@ use serde::Serialize;
 
 #[derive(Serialize)]
 pub struct DataPlaceHolder {
-    data: Vec<String>,
-    error: String,
+    pub data: Vec<String>,
+    pub error: String,
 }
 
-struct DisplayFunc {}
+pub struct DisplayFunc {}
 
 impl DisplayFunc {
-    fn core(&self, path: String, null_key: String) -> Json<DataPlaceHolder> {
+    pub fn core(&self, path: String, null_key: String) -> DataPlaceHolder {
         let final_path = path + ".txt";
         let result = txt_writer::ReadData {}.read(final_path);
         return match result {
             Ok(request) => {
                 if request[0] == null_key {
-                    return Json(DataPlaceHolder {
+                    return DataPlaceHolder {
                         data: vec!["null".to_string()],
                         error: "data is null".to_string(),
-                    });
+                    };
                 } else {
-                    return Json(DataPlaceHolder {
+                    return DataPlaceHolder {
                         data: request,
                         error: "Success".to_string(),
-                    });
+                    };
                 }
             }
             Err(error) => {
                 println!("{}", error);
-                Json(DataPlaceHolder {
+                DataPlaceHolder {
                     data: vec!["no data".to_string()],
                     error: error.to_string(),
-                })
+                }
             }
         };
     }
@@ -53,5 +53,5 @@ pub fn read(
         });
     }
     path = path_second(path, api_state.data_storage_location.to_string());
-    return DisplayFunc {}.core(path, api_state.null.to_string());
+    return Json(DisplayFunc {}.core(path, api_state.null.to_string()));
 }

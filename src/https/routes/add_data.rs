@@ -15,18 +15,6 @@ pub struct Data {
 pub struct AddDataFunc();
 
 impl AddDataFunc {
-    fn make_file(&self, data: String, path: String, data_name: String) -> Json<Data> {
-        let file_error =
-            txt_writer::WriteData {}.drop_replace(data, format!("{}/{}.txt", path, data_name));
-        return match file_error {
-            Err(e) => Json(Data {
-                error: e.to_string(),
-            }),
-            Ok(_) => Json(Data {
-                error: "Success".to_string(),
-            }),
-        };
-    }
     fn make_file_struct(&self, data: String, path: String, data_name: String) -> Data {
         let file_error =
             txt_writer::WriteData {}.drop_replace(data, format!("{}/{}.txt", path, data_name));

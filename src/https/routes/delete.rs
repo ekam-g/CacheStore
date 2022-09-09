@@ -7,20 +7,20 @@ use super::functions::path_second;
 
 #[derive(Serialize)]
 pub struct Data {
-    error: String,
+    pub error: String,
 }
-struct DeleteFunc {}
+pub struct DeleteFunc {}
 
 impl DeleteFunc {
-    pub fn main_func(&self, path: String) -> Json<Data> {
+    pub fn main_func(&self, path: String) -> Data {
         let delete_error = fs::remove_file(path);
         match delete_error {
-            Ok(_) => Json(Data {
+            Ok(_) => Data {
                 error: "Success".to_string(),
-            }),
-            Err(error) => Json(Data {
+            },
+            Err(error) => Data {
                 error: error.to_string(),
-            }),
+            },
         }
     }
 }
@@ -33,5 +33,5 @@ pub fn delete(path: String, api_key: String, api_state: State<crate::StateData>)
         });
     }
     let final_path = path_second(path, api_state.data_storage_location.to_string());
-    return DeleteFunc {}.main_func(final_path);
+    return Json(DeleteFunc {}.main_func(final_path));
 }
