@@ -8,9 +8,9 @@ mod https;
 /// this code will only work with nightly
 
 pub struct StateData {
-    api_key: String,
-    null: String,
-    data_storage_location: String,
+    pub api_key: String,
+    pub null: String,
+    pub data_storage_location: String,
 }
 
 impl StateData {
