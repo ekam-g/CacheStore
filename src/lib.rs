@@ -43,11 +43,15 @@ impl StateData {
         let delete_error = https::routes::delete::DeleteFunc {}.main_func(final_path);
         return self.error_or_not(delete_error.error);
     }
-    pub fn read_data(&self, path: &str) -> Result<(), String> {
+    pub fn read_data(&self, path: &str) -> Result<Vec<String>, String> {
         let final_path = self.path_format(path.to_string());
         let read_error =
             https::routes::display_data::DisplayFunc {}.core(final_path, self.api_key.to_string());
-        return self.error_or_not(read_error.error);
+        if read_error.error == "Success" {
+            Ok(read_error.data)
+        } else {
+            Err(read_error.error)
+        }
     }
     pub fn null_write(&self, path: &str) -> Result<(), String> {
         let final_path = self.path_format(path.to_string());
