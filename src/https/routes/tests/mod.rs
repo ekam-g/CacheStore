@@ -38,7 +38,7 @@ mod test {
     }
     #[tokio::test]
     async fn read_data_test_many() {
-        thread::sleep(time::Duration::from_secs(2));
+        thread::sleep(time::Duration::from_secs(1));
         let data = http_request::Request::read_more(
             "http://localhost:8000/read/test`worked`data/your_api_key".to_string(),
         )
@@ -93,6 +93,7 @@ mod test {
         test_url("http://localhost:8000/delete/test`worked`data.txt/your_api_key".to_string())
             .await;
     }
+    // Local funtion testing
     #[tokio::test]
     async fn add_data_test_local() {
         let func = StateData {
@@ -114,7 +115,7 @@ mod test {
             data_storage_location: "database/".to_string(),
         };
         let check_data = func
-            .read_data("test/worked/local/data")
+            .read_data("test/worked/local/data.txt")
             .expect("failed when reading");
         if check_data
             != vec![
@@ -133,7 +134,7 @@ mod test {
             null: "null_nil_value_key:345n,234lj52".to_string(),
             data_storage_location: "database/".to_string(),
         };
-        let check_data = func.read_data("test/worked/local/data");
+        let check_data = func.read_data("test/worked/local/data.txt");
         match check_data {
             Ok(_) => {
                 panic!("null write failed!")
@@ -153,7 +154,7 @@ mod test {
             null: "null_nil_value_key:345n,234lj52".to_string(),
             data_storage_location: "database/".to_string(),
         };
-        func.delete_data("test/worked/local/data")
+        func.delete_data("test/worked/local/data.txt")
             .expect("delete failed");
     }
 }
