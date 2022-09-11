@@ -13,8 +13,7 @@ pub struct DisplayFunc {}
 
 impl DisplayFunc {
     pub fn core(&self, path: String, null_key: String) -> DataPlaceHolder {
-        let final_path = path + ".txt";
-        let result = txt_writer::ReadData {}.read(final_path);
+        let result = txt_writer::ReadData {}.read(format!("{}.txt", path));
         return match result {
             Ok(request) => {
                 if request[0] == null_key {

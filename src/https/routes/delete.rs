@@ -13,7 +13,7 @@ pub struct DeleteFunc {}
 
 impl DeleteFunc {
     pub fn main_func(&self, path: String) -> Data {
-        let delete_error = fs::remove_file(path);
+        let delete_error = fs::remove_file(format!("{}.txt", path));
         match delete_error {
             Ok(_) => Data {
                 error: "Success".to_string(),

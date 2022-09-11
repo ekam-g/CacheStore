@@ -56,8 +56,7 @@ mod test {
     #[tokio::test]
     async fn delete_data_test() {
         thread::sleep(time::Duration::from_secs(3));
-        test_url("http://localhost:8000/delete/test`worked`data.txt/your_api_key".to_string())
-            .await;
+        test_url("http://localhost:8000/delete/test`worked`data/your_api_key".to_string()).await;
     }
     #[tokio::test]
     async fn delete_data_test_check() {
@@ -74,7 +73,7 @@ mod test {
     #[tokio::test]
     async fn null_test() {
         thread::sleep(time::Duration::from_secs(5));
-        test_url("http://localhost:8000/null_write/test`worked`data.txt/your_api_key".to_string())
+        test_url("http://localhost:8000/null_write/test`worked`data/your_api_key".to_string())
             .await;
     }
     #[tokio::test]
@@ -90,8 +89,7 @@ mod test {
     async fn read_data_test_null() {
         thread::sleep(time::Duration::from_secs(7));
         test_url("http://localhost:8000/read/test`worked`data/your_api_key".to_string()).await;
-        test_url("http://localhost:8000/delete/test`worked`data.txt/your_api_key".to_string())
-            .await;
+        test_url("http://localhost:8000/delete/test`worked`data/your_api_key".to_string()).await;
     }
     // Local funtion testing
     #[tokio::test]
@@ -115,7 +113,7 @@ mod test {
             data_storage_location: "database/".to_string(),
         };
         let check_data = func
-            .read_data("test/worked/local/data.txt")
+            .read_data("test/worked/local/data")
             .expect("failed when reading");
         if check_data
             != vec![
@@ -134,10 +132,12 @@ mod test {
             null: "null_nil_value_key:345n,234lj52".to_string(),
             data_storage_location: "database/".to_string(),
         };
-        let check_data = func.read_data("test/worked/local/data.txt");
+        func.null_write("test/worked/local/data")
+            .expect("write null functions failed");
+        let check_data = func.read_data("test/worked/local/data");
         match check_data {
-            Ok(_) => {
-                panic!("null write failed!")
+            Ok(data) => {
+                panic!("{}", data[0].to_string())
             }
             Err(e) => {
                 if e != "data is null" {
@@ -154,7 +154,7 @@ mod test {
             null: "null_nil_value_key:345n,234lj52".to_string(),
             data_storage_location: "database/".to_string(),
         };
-        func.delete_data("test/worked/local/data.txt")
+        func.delete_data("test/worked/local/data")
             .expect("delete failed");
     }
 }

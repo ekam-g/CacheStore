@@ -14,7 +14,8 @@ pub struct NullFunc {}
 
 impl NullFunc {
     pub fn core(&self, null_key: String, path: String) -> Data {
-        let delete_error = txt_writer::WriteData {}.replace(&null_key.to_string(), path);
+        let delete_error =
+            txt_writer::WriteData {}.replace(&null_key.to_string(), format!("{}.txt", path));
         match delete_error {
             Ok(_) => Data {
                 error: "Success".to_string(),

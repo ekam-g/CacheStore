@@ -46,7 +46,7 @@ impl StateData {
     pub fn read_data(&self, path: &str) -> Result<Vec<String>, String> {
         let final_path = self.path_format(path);
         let read_error =
-            https::routes::display_data::DisplayFunc {}.core(final_path, self.api_key.to_string());
+            https::routes::display_data::DisplayFunc {}.core(final_path, self.null.to_string());
         if read_error.error == "Success" {
             Ok(read_error.data)
         } else {
@@ -56,7 +56,7 @@ impl StateData {
     pub fn null_write(&self, path: &str) -> Result<(), String> {
         let final_path = self.path_format(path);
         let null_error =
-            https::routes::null_write::NullFunc {}.core(final_path, self.api_key.to_string());
+            https::routes::null_write::NullFunc {}.core(self.null.to_string(), final_path);
         return self.error_or_not(null_error.error);
     }
 }
