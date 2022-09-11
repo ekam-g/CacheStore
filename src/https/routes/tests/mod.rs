@@ -91,9 +91,10 @@ mod test {
         test_url("http://localhost:8000/read/test`worked`data/your_api_key".to_string()).await;
         test_url("http://localhost:8000/delete/test`worked`data/your_api_key".to_string()).await;
     }
-    // Local funtion testing
-    #[tokio::test]
-    async fn add_data_test_local() {
+    // Local functions testing
+    //_________________________________________________________________________________________________________________________
+    #[test]
+    fn add_data_test_local() {
         let func = StateData {
             api_key: "your_api_key".to_string(),
             null: "null_nil_value_key:345n,234lj52".to_string(),
@@ -104,8 +105,8 @@ mod test {
         func.write_data("this is going very well", "test/worked/local", "data")
             .expect("failed when writing data");
     }
-    #[tokio::test]
-    async fn read_data_test_local() {
+    #[test]
+    fn read_data_test_local() {
         thread::sleep(time::Duration::from_secs(1));
         let func = StateData {
             api_key: "your_api_key".to_string(),
@@ -124,8 +125,8 @@ mod test {
             panic!("write data did not work!")
         }
     }
-    #[tokio::test]
-    async fn null_test_check_local() {
+    #[test]
+    fn null_test_check_local() {
         thread::sleep(time::Duration::from_secs(2));
         let func = StateData {
             api_key: "your_api_key".to_string(),
@@ -146,8 +147,8 @@ mod test {
             }
         }
     }
-    #[tokio::test]
-    async fn delete_data_test_check_local() {
+    #[test]
+    fn delete_data_test_check_local() {
         thread::sleep(time::Duration::from_secs(3));
         let func = StateData {
             api_key: "your_api_key".to_string(),
