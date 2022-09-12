@@ -2,7 +2,6 @@ use crate::func::http_request::Request;
 use reqwest::Error;
 use serde::{Deserialize, Serialize};
 
-//this may need to be changed
 #[derive(Serialize, Deserialize)]
 pub struct MainParse {
     pub error: String,
@@ -12,8 +11,6 @@ pub struct Internal {
     pub error: String,
     pub data: Vec<String>,
 }
-
-//end
 
 impl Request {
     pub async fn read(url: String) -> Result<MainParse, Error> {

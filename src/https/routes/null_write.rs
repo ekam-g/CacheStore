@@ -1,6 +1,7 @@
 use rocket::{get, State};
 use rocket_contrib::json::Json;
 use serde::Serialize;
+use std::fmt::Display;
 use txt_writer;
 
 use super::functions::path_second;
@@ -13,9 +14,9 @@ pub struct Data {
 pub struct NullFunc {}
 
 impl NullFunc {
-    pub fn core(&self, null_key: String, path: String) -> Data {
-        let delete_error =
-            txt_writer::WriteData {}.replace(&null_key.to_string(), format!("{}.txt", path));
+    pub fn core<T: Display>(&self, null_key: T, path: T) -> Data {
+        let delete_error = txt_writer::WriteData {}
+            .replace(&null_key.to_string(), format!("{}.txt", path.to_string()));
         match delete_error {
             Ok(_) => Data {
                 error: "Success".to_string(),
