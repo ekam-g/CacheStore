@@ -52,7 +52,7 @@ http://localhost:8000/add/test`worked/data/this is going very well/your_api_key
 This request will delete at ${your_database_folder}/test/worked data.txt.
 
 ```
-http://localhost:8000/delete/test`worked`data.txt/your_api_key
+http://localhost:8000/delete/test`worked`data/your_api_key
 ```
 
 This request will read data at ${your_database_folder}/test/worked data.txt.
@@ -64,13 +64,22 @@ http://localhost:8000/read/test`worked`data/your_api_key
 This request will write null at ${your_database_folder}/test/worked data.txt.
 
 ```
-http://localhost:8000/null_write/test`worked`data.txt/your_api_key
+http://localhost:8000/null_write/test`worked`data/your_api_key
 ```
 
 Info on api
 
 ```
 http://localhost:8000/
+```
+
+## Local Host Functions
+
+To use this you don't need to start the database.
+
+To read 
+```
+
 ```
 
 # Questions?
@@ -85,7 +94,7 @@ This database uses a directory way just like you would do on a computer. This st
 
 ## How Does it read data?
 
-This database requires your to put a directory (if you want to use  a "/" use a "`" instead) and it return txt value by reading it line by line (a vec value). 
+This database requires your to put a directory (if you want to use a "/" use a "`" instead) and it return txt value by reading it line by line (a vec value).
 
 ## How does this database value handle null?
 
@@ -97,17 +106,20 @@ This database has a write null feature to write a null key. If the null key is r
     "error" : "data is null"
 }
 ```
+
 make sure to handle error and check if error value equals "Success".
 
-## Error Handling? 
+## Error Handling?
 
 If the database work just as planned it returns
+
 ```
 {
     "error" : "Success"
 }
 ```
-otherwise it shows the error it received. 
+
+otherwise it shows the error it received.
 
 ## Still have questions?
 
