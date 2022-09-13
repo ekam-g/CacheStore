@@ -16,7 +16,7 @@ impl DeleteFunc {
         let delete_error = fs::remove_file(format!("{}.txt", path));
         match delete_error {
             Ok(_) => Data {
-                error: "Success".to_string(),
+                error: "Success".to_owned(),
             },
             Err(error) => Data {
                 error: error.to_string(),
@@ -29,9 +29,9 @@ impl DeleteFunc {
 pub fn delete(path: String, api_key: String, api_state: State<crate::StateData>) -> Json<Data> {
     if api_key != api_state.api_key {
         return Json(Data {
-            error: "Not authorized".to_string(),
+            error: "Not authorized".to_owned(),
         });
     }
-    let final_path = path_second(path, api_state.data_storage_location.to_string());
+    let final_path = path_second(path, api_state.data_storage_location.clone());
     return Json(DeleteFunc {}.main_func(final_path));
 }

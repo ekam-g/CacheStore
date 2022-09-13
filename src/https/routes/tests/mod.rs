@@ -149,7 +149,8 @@ mod test {
         };
         func.null_write("test/worked/local/data")
             .expect("write null functions failed");
-
+        func.write_data("test/worked/local", "test/worked/local", "data")
+            .expect("msg");
         test_read_error(func, "data is null".to_owned());
     }
     #[test]
