@@ -93,6 +93,20 @@ mod test {
     }
     // Local functions testing
     //_________________________________________________________________________________________________________________________
+    fn test_read_error(func: StateData, what_error: String) {
+        let check_data = func.read_data("test/worked/local/data");
+        match check_data {
+            Ok(data) => {
+                panic!("{}", data[0].to_string())
+            }
+            Err(e) => {
+                if e != what_error {
+                    panic!("{}", e)
+                }
+            }
+        }
+    }
+
     #[test]
     fn add_data_test_local() {
         let func = StateData {
@@ -135,17 +149,8 @@ mod test {
         };
         func.null_write("test/worked/local/data")
             .expect("write null functions failed");
-        let check_data = func.read_data("test/worked/local/data");
-        match check_data {
-            Ok(data) => {
-                panic!("{}", data[0].to_string())
-            }
-            Err(e) => {
-                if e != "data is null" {
-                    panic!("wrong error")
-                }
-            }
-        }
+
+        test_read_error(func, "data is null".to_owned());
     }
     #[test]
     fn delete_data_test_check_local() {
@@ -157,5 +162,6 @@ mod test {
         };
         func.delete_data("test/worked/local/data")
             .expect("delete failed");
+        test_read_error(func, "No such file or directory (os error 2)".to_owned());
     }
 }
