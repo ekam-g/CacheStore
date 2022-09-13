@@ -1,7 +1,7 @@
 use rocket::{get, State};
 use rocket_contrib::json::Json;
 use serde::Serialize;
-use std::fs;
+use std::{fmt::Display, fs};
 
 use super::functions::path_second;
 
@@ -12,7 +12,7 @@ pub struct Data {
 pub struct DeleteFunc {}
 
 impl DeleteFunc {
-    pub fn main_func(&self, path: String) -> Data {
+    pub fn main_func<T: Display>(&self, path: T) -> Data {
         let delete_error = fs::remove_file(format!("{}.txt", path));
         match delete_error {
             Ok(_) => Data {

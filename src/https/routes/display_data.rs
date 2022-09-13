@@ -1,3 +1,5 @@
+use std::fmt::Display;
+
 use super::functions::path_second;
 use rocket::{get, State};
 use rocket_contrib::json::Json;
@@ -12,7 +14,7 @@ pub struct DataPlaceHolder {
 pub struct DisplayFunc {}
 
 impl DisplayFunc {
-    pub fn core(&self, path: String, null_key: String) -> DataPlaceHolder {
+    pub fn core<T: Display>(&self, path: T, null_key: String) -> DataPlaceHolder {
         let result = txt_writer::ReadData {}.read(format!("{}.txt", path));
         return match result {
             Ok(request) => {

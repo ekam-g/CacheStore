@@ -1,3 +1,5 @@
+use std::fmt::Display;
+
 use crate::https::State;
 use better_file_maker;
 use rocket::get;
@@ -15,9 +17,14 @@ pub struct Data {
 pub struct AddDataFunc();
 
 impl AddDataFunc {
-    fn make_file_struct(&self, data: String, path: String, data_name: String) -> Data {
+    fn make_file_struct<T: Display, E: Display, F: Display>(
+        &self,
+        data: T,
+        path: E,
+        data_name: F,
+    ) -> Data {
         let file_error =
-            txt_writer::WriteData {}.drop_replace(data, format!("{}/{}.txt", path, data_name));
+            txt_writer::WriteData {}.replace(data, format!("{}/{}.txt", path, data_name));
         return match file_error {
             Err(e) => Data {
                 error: e.to_string(),
@@ -27,11 +34,11 @@ impl AddDataFunc {
             },
         };
     }
-    pub fn core(
+    pub fn core<T: Display, E: Display, F: Display>(
         &self,
-        final_path: String,
-        data_name: String,
-        data: String,
+        final_path: T,
+        data_name: E,
+        data: F,
         null_key: String,
     ) -> Data {
         let file_error =
@@ -40,7 +47,7 @@ impl AddDataFunc {
             Ok(read_data) => {
                 if read_data[0] != null_key {
                     let error = txt_writer::WriteData {}
-                        .drop_add(data, format!("{}/{}.txt", final_path, data_name));
+                        .add(data, format!("{}/{}.txt", final_path, data_name));
                     match error {
                         Ok(_) => Data {
                             error: "Success".to_string(),

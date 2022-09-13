@@ -91,9 +91,9 @@ checksum = "904dfeac50f3cdaba28fc6f57fdcddb75f49ed61346676a78c4ffe55877802fd"
 
 [[package]]
 name = "better_file_maker"
-version = "0.1.7"
+version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "42e0a5187edbabf502318cffbdc887a591b08d6b799e6dfd6063ff28f3db7423"
+checksum = "261eb91cb363a5611520329af7c7930a31b26737fb15ac9dc52be7af0ec8343f"
 
 [[package]]
 name = "bitflags"
@@ -1549,9 +1549,9 @@ checksum = "59547bce71d9c38b83d9c0e92b6066c4253371f15005def0c30d9657f50c7642"
 
 [[package]]
 name = "txt_writer"
-version = "0.1.2"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "de4ae355dc0379b0b54035f55e04107a701dfc292052e18347a2db5b492521c0"
+checksum = "1a7aca18b6cb804bc9778f6f00d4d16046b3cee8e164469aa44dfce5e403be50"
 
 [[package]]
 name = "typeable"
