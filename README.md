@@ -77,9 +77,69 @@ http://localhost:8000/
 
 To use this you don't need to start the database.
 
-To read 
+To write
+
+```
+use rust_store;
+
+fn main(){
+    let func = rust_store::StateData {
+            api_key: "your_api_key".to_string(),
+            null: "null_nil_value_key:345n,234lj52".to_string(),
+            data_storage_location: "database/".to_string(),
+        };
+        func.write_data("this is going very well", "test/worked/local", "data")
+            .expect("failed when writing data");
+}
 ```
 
+To read
+
+```
+use rust_store;
+
+fn main(){
+     let func = rust_store::StateData {
+            api_key: "your_api_key".to_string(),
+            null: "null_nil_value_key:345n,234lj52".to_string(),
+            data_storage_location: "database/".to_string(),
+        };
+        let check_data = func
+            .read_data("test/worked/local/data")
+            .expect("failed when reading");
+}
+```
+
+To Delete
+
+```
+use rust_store;
+
+fn main(){
+     let func = rust_store::StateData {
+            api_key: "your_api_key".to_string(),
+            null: "null_nil_value_key:345n,234lj52".to_string(),
+            data_storage_location: "database/".to_string(),
+        };
+        func.delete_data("test/worked/local/data")
+            .expect("delete failed");
+}
+```
+
+To write null
+
+```
+use rust_store;
+
+fn main(){
+     let func = rust_store::StateData {
+            api_key: "your_api_key".to_string(),
+            null: "null_nil_value_key:345n,234lj52".to_string(),
+            data_storage_location: "database/".to_string(),
+        };
+        func.null_write("test/worked/local/data")
+            .expect("write null functions failed");
+}
 ```
 
 # Questions?
@@ -119,7 +179,15 @@ If the database work just as planned it returns
 }
 ```
 
-otherwise it shows the error it received.
+otherwise it shows the error it received like this.
+
+```
+{
+    "error" : "error when writing data"
+}
+```
+
+For local functions is returns a Result<(), String> and the errors are the same just make sure to handle the error by matching the string.
 
 ## Still have questions?
 
