@@ -1,3 +1,4 @@
+use better_file_maker;
 use std::fmt::Display;
 
 use crate::StateData;
@@ -17,7 +18,19 @@ impl StateData {
     }
 
     pub fn start_database_online(self) {
-        crate::https::Web {}.start(self);
+        let error = better_file_maker::make_folders(&self.data_storage_location);
+        match error {
+            Err(e) => {
+                println!(
+                    "When starting the database and creating a folder {} error was recived",
+                    e.to_string()
+                );
+                crate::https::Web {}.start(self);
+            }
+            Ok(_) => {
+                crate::https::Web {}.start(self);
+            }
+        }
     }
     pub fn write_data<T: Display, T2: Display, T3: Display>(
         &self,
