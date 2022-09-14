@@ -1208,7 +1208,7 @@ dependencies = [
 
 [[package]]
 name = "rust_store"
-version = "0.1.9"
+version = "0.2.0"
 dependencies = [
  "better_file_maker",
  "reqwest",
