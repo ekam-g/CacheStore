@@ -5,8 +5,10 @@ use crate::StateData;
 impl StateData {
     fn error_or_not(&self, error: String) -> Result<(), String> {
         if error == "Success" {
+            println!("Response succeeded!!!!");
             Ok(())
         } else {
+            println!("FAILED!!!!");
             Err(error)
         }
     }
@@ -42,8 +44,10 @@ impl StateData {
         let read_error =
             crate::https::routes::display_data::DisplayFunc {}.core(final_path, self.null.clone());
         if read_error.error == "Success" {
+            println!("Response succeeded!!!!");
             Ok(read_error.data)
         } else {
+            println!("FAILED!!!!!");
             Err(read_error.error)
         }
     }
