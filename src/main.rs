@@ -16,9 +16,9 @@ pub struct StateData {
 pub mod functions;
 fn main() {
     StateData {
-        api_key: "your_api_key".to_string(),
-        null: "null_nil_value_key:345n,234lj52".to_string(),
-        data_storage_location: "database/".to_string(),
+        api_key: "your_api_key".to_owned(),
+        null: "null_nil_value_key:345n,234lj52".to_owned(),
+        data_storage_location: "database/".to_owned(),
     }
     .start_database_online()
 }

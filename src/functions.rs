@@ -26,9 +26,9 @@ impl StateData {
         let final_path = self.path_format(path.to_string());
         let read_data = crate::https::routes::add_data::AddDataFunc {}.core(
             final_path,
-            data_name.to_string(),
-            data.to_string(),
-            self.api_key.to_string(),
+            data_name,
+            data,
+            self.api_key.clone(),
         );
         return self.error_or_not(read_data.error);
     }
@@ -39,8 +39,8 @@ impl StateData {
     }
     pub fn read_data<T: Display>(&self, path: T) -> Result<Vec<String>, String> {
         let final_path = self.path_format(path.to_string());
-        let read_error = crate::https::routes::display_data::DisplayFunc {}
-            .core(final_path, self.null.to_string());
+        let read_error =
+            crate::https::routes::display_data::DisplayFunc {}.core(final_path, self.null.clone());
         if read_error.error == "Success" {
             Ok(read_error.data)
         } else {
@@ -50,7 +50,7 @@ impl StateData {
     pub fn null_write<T: Display>(&self, path: T) -> Result<(), String> {
         let final_path = self.path_format(path.to_string());
         let null_error =
-            crate::https::routes::null_write::NullFunc {}.core(self.null.to_string(), final_path);
+            crate::https::routes::null_write::NullFunc {}.core(self.null.clone(), final_path);
         return self.error_or_not(null_error.error);
     }
 }

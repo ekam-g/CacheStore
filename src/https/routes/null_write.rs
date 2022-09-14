@@ -31,7 +31,7 @@ impl NullFunc {
 pub fn null_write(path: String, api_key: String, api_state: State<crate::StateData>) -> Json<Data> {
     if api_key != api_state.api_key {
         return Json(Data {
-            error: "Not authorized".to_string(),
+            error: "Not authorized".to_owned(),
         });
     }
     let final_path = path_second(path, api_state.data_storage_location.clone());

@@ -93,9 +93,9 @@ pub fn add(
 ) -> Json<Data> {
     if api_key != api_state.api_key {
         return Json(Data {
-            error: "Not authorized".to_string(),
+            error: "Not authorized".to_owned(),
         });
     }
-    let final_path = path_second(path, api_state.data_storage_location.to_string());
-    return Json(AddDataFunc {}.core(final_path, data_name, data, api_state.null.to_string()));
+    let final_path = path_second(path, api_state.data_storage_location.clone());
+    return Json(AddDataFunc {}.core(final_path, data_name, data, api_state.null.clone()));
 }
