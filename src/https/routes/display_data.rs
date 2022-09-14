@@ -20,20 +20,20 @@ impl DisplayFunc {
             Ok(request) => {
                 if request[0] == null_key {
                     return DataPlaceHolder {
-                        data: vec!["null".to_string()],
-                        error: "data is null".to_string(),
+                        data: vec!["null".to_owned()],
+                        error: "data is null".to_owned(),
                     };
                 } else {
                     return DataPlaceHolder {
                         data: request,
-                        error: "Success".to_string(),
+                        error: "Success".to_owned(),
                     };
                 }
             }
             Err(error) => {
                 println!("{}", error);
                 DataPlaceHolder {
-                    data: vec!["no data".to_string()],
+                    data: vec!["no data".to_owned()],
                     error: error.to_string(),
                 }
             }
@@ -49,10 +49,10 @@ pub fn read(
 ) -> Json<DataPlaceHolder> {
     if api_key != api_state.api_key {
         return Json(DataPlaceHolder {
-            data: vec!["no data".to_string()],
-            error: "Not authorized".to_string(),
+            data: vec!["no data".to_owned()],
+            error: "Not authorized".to_owned(),
         });
     }
-    path = path_second(path, api_state.data_storage_location.to_string());
-    return Json(DisplayFunc {}.core(path, api_state.null.to_string()));
+    path = path_second(path, api_state.data_storage_location.clone());
+    return Json(DisplayFunc {}.core(path, api_state.null.clone()));
 }

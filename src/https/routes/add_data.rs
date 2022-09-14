@@ -30,7 +30,7 @@ impl AddDataFunc {
                 error: e.to_string(),
             },
             Ok(_) => Data {
-                error: "Success".to_string(),
+                error: "Success".to_owned(),
             },
         };
     }
@@ -52,7 +52,7 @@ impl AddDataFunc {
                         .add(data, format!("{}/{}.txt", final_path, data_name));
                     match error {
                         Ok(_) => Data {
-                            error: "Success".to_string(),
+                            error: "Success".to_owned(),
                         },
                         Err(e) => Data {
                             error: e.to_string(),
@@ -65,7 +65,7 @@ impl AddDataFunc {
                     .replace(&data, format!("{}/{}.txt", &final_path, &data_name));
                 match writing_error {
                     Ok(_) => Data {
-                        error: "Success".to_string(),
+                        error: "Success".to_owned(),
                     },
                     Err(_) => {
                         let file_error = better_file_maker::make_folders(&final_path);

@@ -1,5 +1,5 @@
 #![feature(proc_macro_hygiene, decl_macro)]
-
+#![allow(clippy::needless_return)]
 mod func;
 mod https;
 

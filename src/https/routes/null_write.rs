@@ -14,12 +14,11 @@ pub struct Data {
 pub struct NullFunc {}
 
 impl NullFunc {
-    pub fn core<T: Display>(&self, null_key: T, path: T) -> Data {
-        let delete_error =
-            txt_writer::WriteData {}.replace(&null_key.to_string(), format!("{}.txt", path));
+    pub fn core<T: Display>(&self, null_key: String, path: T) -> Data {
+        let delete_error = txt_writer::WriteData {}.replace(&null_key, format!("{}.txt", path));
         match delete_error {
             Ok(_) => Data {
-                error: "Success".to_string(),
+                error: "Success".to_owned(),
             },
             Err(error) => Data {
                 error: error.to_string(),
@@ -35,6 +34,6 @@ pub fn null_write(path: String, api_key: String, api_state: State<crate::StateDa
             error: "Not authorized".to_string(),
         });
     }
-    let final_path = path_second(path, api_state.data_storage_location.to_string());
-    return Json(NullFunc {}.core(api_state.null.to_string(), final_path));
+    let final_path = path_second(path, api_state.data_storage_location.clone());
+    return Json(NullFunc {}.core(api_state.null.clone(), final_path));
 }
