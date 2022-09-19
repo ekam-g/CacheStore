@@ -4,6 +4,9 @@ use crate::func::http_request;
 use crate::StateData;
 use core::time;
 use std::thread::{self};
+
+static BASE_URL: &str = "http://localhost:8000";
+
 async fn test_url(url: String) {
     let test_data = http_request::Request::read(url).await;
     match test_data {
@@ -20,26 +23,32 @@ async fn test_url(url: String) {
 #[tokio::test]
 async fn add_data_test() {
     test_url(
-        "http://localhost:8000/add/test`worked/data/this is going very well/your_api_key"
-            .to_owned(),
+        format!(
+            "{}/add/test`worked/data/this is going very well/your_api_key",
+            BASE_URL
+        )
+        .to_owned(),
     )
     .await;
     test_url(
-        "http://localhost:8000/add/test`worked/data/this is going very well/your_api_key"
-            .to_owned(),
+        format!(
+            "{}/add/test`worked/data/this is going very well/your_api_key",
+            BASE_URL
+        )
+        .to_owned(),
     )
     .await;
 }
 #[tokio::test]
 async fn read_data_test() {
     thread::sleep(time::Duration::from_secs(1));
-    test_url("http://localhost:8000/read/test`worked`data/your_api_key".to_owned()).await;
+    test_url(format!("{}/read/test`worked`data/your_api_key", BASE_URL).to_owned()).await;
 }
 #[tokio::test]
 async fn read_data_test_many() {
     thread::sleep(time::Duration::from_secs(1));
     let data = http_request::Request::read_more(
-        "http://localhost:8000/read/test`worked`data/your_api_key".to_owned(),
+        format!("{}/read/test`worked`data/your_api_key", BASE_URL).to_owned(),
     )
     .await
     .expect("");
@@ -55,13 +64,13 @@ async fn read_data_test_many() {
 #[tokio::test]
 async fn delete_data_test() {
     thread::sleep(time::Duration::from_secs(3));
-    test_url("http://localhost:8000/delete/test`worked`data/your_api_key".to_owned()).await;
+    test_url(format!("{}/delete/test`worked`data/your_api_key", BASE_URL).to_owned()).await;
 }
 #[tokio::test]
 async fn delete_data_test_check() {
     thread::sleep(time::Duration::from_secs(4));
     let data = http_request::Request::read(
-        "http://localhost:8000/read/test`worked`data/your_api_key".to_owned(),
+        format!("{}/read/test`worked`data/your_api_key", BASE_URL).to_owned(),
     )
     .await
     .expect("");
@@ -72,22 +81,25 @@ async fn delete_data_test_check() {
 #[tokio::test]
 async fn null_test() {
     thread::sleep(time::Duration::from_secs(5));
-    test_url("http://localhost:8000/null_write/test`worked`data/your_api_key".to_owned()).await;
+    test_url(format!("{}/null_write/test`worked`data/your_api_key", BASE_URL).to_owned()).await;
 }
 #[tokio::test]
 async fn null_test_check() {
     thread::sleep(time::Duration::from_secs(6));
     test_url(
-        "http://localhost:8000/add/test`worked/data/this is going very well/your_api_key"
-            .to_owned(),
+        format!(
+            "{}/add/test`worked/data/this is going very well/your_api_key",
+            BASE_URL
+        )
+        .to_owned(),
     )
     .await;
 }
 #[tokio::test]
 async fn read_data_test_null() {
     thread::sleep(time::Duration::from_secs(7));
-    test_url("http://localhost:8000/read/test`worked`data/your_api_key".to_owned()).await;
-    test_url("http://localhost:8000/delete/test`worked`data/your_api_key".to_owned()).await;
+    test_url(format!("{}/read/test`worked`data/your_api_key", BASE_URL).to_owned()).await;
+    test_url(format!("{}/delete/test`worked`data/your_api_key", BASE_URL).to_owned()).await;
 }
 // Local functions testing
 //_________________________________________________________________________________________________________________________
