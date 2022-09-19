@@ -6,6 +6,7 @@ use core::time;
 use std::thread::{self};
 
 static BASE_URL: &str = "http://localhost:8000";
+// http://0.0.0.0:8000
 
 async fn test_url(url: String) {
     let test_data = http_request::Request::read(url).await;
