@@ -19,15 +19,15 @@ impl DisplayFunc {
         match result {
             Ok(request) => {
                 if request[0] == null_key {
-                    return DataPlaceHolder {
+                    DataPlaceHolder {
                         data: vec!["null".to_owned()],
                         error: "data is null".to_owned(),
-                    };
+                    }
                 } else {
-                    return DataPlaceHolder {
+                    DataPlaceHolder {
                         data: request,
                         error: "Success".to_owned(),
-                    };
+                    }
                 }
             }
             Err(error) => {

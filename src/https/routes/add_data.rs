@@ -46,7 +46,7 @@ impl AddDataFunc {
         match file_error {
             Ok(read_data) => {
                 if read_data[0] == null_key {
-                    return AddDataFunc {}.make_file_struct(data, final_path, data_name);
+                    AddDataFunc {}.make_file_struct(data, final_path, data_name)
                 } else {
                     let error = txt_writer::WriteData {}
                         .add(data, format!("{}/{}.txt", final_path, data_name));
