@@ -48,11 +48,12 @@ pub fn read(
     api_state: State<crate::StateData>,
 ) -> Json<DataPlaceHolder> {
     if api_key != api_state.api_key {
-        return Json(DataPlaceHolder {
+         Json(DataPlaceHolder {
             data: vec!["no data".to_owned()],
             error: "Not authorized".to_owned(),
-        });
+        })
+    } else {
+        path = path_second(path, api_state.data_storage_location.clone());
+        Json(DisplayFunc {}.core(path, api_state.null.clone()))
     }
-    path = path_second(path, api_state.data_storage_location.clone());
-    Json(DisplayFunc {}.core(path, api_state.null.clone()))
 }
