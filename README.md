@@ -41,7 +41,7 @@ fn main() {
 
 USE RUST NIGHTLY!!!!!!!
 
-use ` instead of / to navgate directories.
+use ` instead of / to navigate directories.
 
 This request will add data at ${your_database_folder}/test/worked data.txt. The data.txt will have "this is going very well" stored.
 

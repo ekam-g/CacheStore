@@ -25,14 +25,14 @@ impl AddDataFunc {
     ) -> Data {
         let file_error =
             txt_writer::WriteData {}.replace(data, format!("{}/{}.txt", path, data_name));
-        return match file_error {
+        match file_error {
             Err(e) => Data {
                 error: e.to_string(),
             },
             Ok(_) => Data {
                 error: "Success".to_owned(),
             },
-        };
+        }
     }
     pub fn core<T: Display, E: Display, F: Display>(
         &self,
@@ -43,7 +43,7 @@ impl AddDataFunc {
     ) -> Data {
         let file_error =
             txt_writer::ReadData {}.read(format!("{}/{}.txt", &final_path, &data_name));
-        return match file_error {
+        match file_error {
             Ok(read_data) => {
                 if read_data[0] == null_key {
                     return AddDataFunc {}.make_file_struct(data, final_path, data_name);
@@ -79,7 +79,7 @@ impl AddDataFunc {
                     }
                 }
             }
-        };
+        }
     }
 }
 
@@ -97,5 +97,5 @@ pub fn add(
         });
     }
     let final_path = path_second(path, api_state.data_storage_location.clone());
-    return Json(AddDataFunc {}.core(final_path, data_name, data, api_state.null.clone()));
+    Json(AddDataFunc {}.core(final_path, data_name, data, api_state.null.clone()))
 }

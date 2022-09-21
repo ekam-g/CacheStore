@@ -15,7 +15,7 @@ pub struct Internal {
 impl Request {
     pub async fn read(url: String) -> Result<MainParse, Error> {
         let output = reqwest::Client::new().get(url).send().await;
-        return match output {
+        match output {
             Ok(data) => {
                 let final_data = data.json().await;
                 match final_data {
@@ -24,11 +24,11 @@ impl Request {
                 }
             }
             Err(err) => Err(err),
-        };
+        }
     }
     pub async fn read_more(url: String) -> Result<Internal, Error> {
         let output = reqwest::Client::new().get(url).send().await;
-        return match output {
+        match output {
             Ok(data) => {
                 let final_data = data.json().await;
                 match final_data {
@@ -37,6 +37,6 @@ impl Request {
                 }
             }
             Err(err) => Err(err),
-        };
+        }
     }
 }

@@ -33,5 +33,5 @@ pub fn delete(path: String, api_key: String, api_state: State<crate::StateData>)
         });
     }
     let final_path = path_second(path, api_state.data_storage_location.clone());
-    return Json(DeleteFunc {}.main_func(final_path));
+    Json(DeleteFunc {}.main_func(final_path))
 }

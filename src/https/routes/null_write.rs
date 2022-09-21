@@ -35,5 +35,5 @@ pub fn null_write(path: String, api_key: String, api_state: State<crate::StateDa
         });
     }
     let final_path = path_second(path, api_state.data_storage_location.clone());
-    return Json(NullFunc {}.core(api_state.null.clone(), final_path));
+    Json(NullFunc {}.core(api_state.null.clone(), final_path))
 }

@@ -14,7 +14,7 @@ impl StateData {
         }
     }
     fn path_format(&self, path: String) -> String {
-        return format!("{}{}", self.data_storage_location, path);
+        format!("{}{}", self.data_storage_location, path)
     }
 
     pub fn start_database_online(self) {
@@ -22,8 +22,8 @@ impl StateData {
         match error {
             Err(e) => {
                 println!(
-                    "When starting the database and creating a folder {} error was recived",
-                    e.to_string()
+                    "When starting the database and creating a folder {} error was received",
+                    e
                 );
                 crate::https::Web {}.start(self);
             }
@@ -45,12 +45,12 @@ impl StateData {
             data,
             self.api_key.clone(),
         );
-        return self.error_or_not(read_data.error);
+        self.error_or_not(read_data.error)
     }
     pub fn delete_data<T: Display>(&self, path: T) -> Result<(), String> {
         let final_path = self.path_format(path.to_string());
         let delete_error = crate::https::routes::delete::DeleteFunc {}.main_func(final_path);
-        return self.error_or_not(delete_error.error);
+        self.error_or_not(delete_error.error)
     }
     pub fn read_data<T: Display>(&self, path: T) -> Result<Vec<String>, String> {
         let final_path = self.path_format(path.to_string());
@@ -68,6 +68,6 @@ impl StateData {
         let final_path = self.path_format(path.to_string());
         let null_error =
             crate::https::routes::null_write::NullFunc {}.core(self.null.clone(), final_path);
-        return self.error_or_not(null_error.error);
+        self.error_or_not(null_error.error)
     }
 }

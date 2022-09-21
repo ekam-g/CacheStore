@@ -16,7 +16,7 @@ pub struct DisplayFunc {}
 impl DisplayFunc {
     pub fn core<T: Display>(&self, path: T, null_key: String) -> DataPlaceHolder {
         let result = txt_writer::ReadData {}.read(format!("{}.txt", path));
-        return match result {
+        match result {
             Ok(request) => {
                 if request[0] == null_key {
                     return DataPlaceHolder {
@@ -37,7 +37,7 @@ impl DisplayFunc {
                     error: error.to_string(),
                 }
             }
-        };
+        }
     }
 }
 
@@ -54,5 +54,5 @@ pub fn read(
         });
     }
     path = path_second(path, api_state.data_storage_location.clone());
-    return Json(DisplayFunc {}.core(path, api_state.null.clone()));
+    Json(DisplayFunc {}.core(path, api_state.null.clone()))
 }
