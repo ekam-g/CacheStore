@@ -1,8 +1,8 @@
 [package]
 name = "cache_store"
-version = "0.2.3"
+version = "0.2.4"
 edition = "2021"
-description = "A quick and easy database for you to use!"
+description = "A quick and easy cache database for you to use!"
 license = "MIT"
 repository = "https://github.com/carghai/RustStore"
 homepage = "https://carghaiwebsite.web.app/#/"
@@ -19,12 +19,12 @@ opt-level = 3
 [dependencies]
 rocket = "0.4.11"
 rocket_contrib = { version = "0.4.11", features = ["json"] }
-serde = { version = "1.0.144", features = ["derive"] }
-reqwest = { version = "0.11.11", features = ["json"] }
+serde = { version = "1.0.145", features = ["derive"] }
+reqwest = { version = "0.11.12", features = ["json"] }
 serde_json = "1.0.85"
-tokio = {version = "1.20.1", features = ["full"]}
-better_file_maker = "0.1.8"
-txt_writer = "0.1.3"
+tokio = {version = "1.21.1", features = ["full"]}
+better_file_maker = "0.1.9"
+txt_writer = "0.1.4"
 once_cell = "1.15.0"
-openssl = { version = "0.10.35", features = ["vendored"] }
-openssl-sys = {version = "0.9.66", features = ["vendored"]}
+openssl = { version = "0.10.41", features = ["vendored"] }
+openssl-sys = {version = "0.9.75", features = ["vendored"]}

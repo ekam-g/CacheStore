@@ -15,12 +15,8 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="better test code">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+    <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/local_test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/local_test.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -619,7 +615,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add data" />
     <MESSAGE value="spliting func" />
     <MESSAGE value="almost done" />
     <MESSAGE value="add data work just need to optimize it" />
@@ -644,7 +639,8 @@
     <MESSAGE value="added chase tests" />
     <MESSAGE value="fixed tests" />
     <MESSAGE value="better test code" />
-    <option name="LAST_COMMIT_MESSAGE" value="better test code" />
+    <MESSAGE value="MAJOR update added cache data" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAJOR update added cache data" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
