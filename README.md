@@ -1,8 +1,6 @@
 # Welcome To CacheStore Database!
 
 
-Note the name was changed to cache_store so use this https://crates.io/crates/cache_store
-
 ## What is this?
 
 this is a cache database for you to git clone and use in your project!
