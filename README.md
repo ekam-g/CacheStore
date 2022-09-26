@@ -3,7 +3,7 @@
 
 ## What is this?
 
-this is a cache database for you to git clone and use in your project!
+this is a cache database for you to use in your project!
 
 ## Why should I use it?
 
