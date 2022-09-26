@@ -64,10 +64,10 @@ fn local_func_test() {
         .expect("delete failed");
     test_read_error(&func, "No such file or directory (os error 2)".to_owned());
     // Cashe tests
-    func.add_cache_data("hello", "worked").expect("");
-    func.add_cache_data("hello", "worked").expect("");
-    func.read_cache_data("hello").expect("");
-    func.delete_cache_data("hello").expect("");
+    func.add_cache_data("cool", "worked").expect("");
+    func.add_cache_data("cool", "worked").expect("");
+    func.read_cache_data("cool").expect("");
+    func.delete_cache_data("cool").expect("");
     let data = func.read_cache_data("hello");
     if let Ok(e) = data {
         panic!("{}", e);

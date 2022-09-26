@@ -129,6 +129,23 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ec8a7b6a70fde80372154c65702f00a0f56f3e1c36abbc6c440484be248856db"
 
 [[package]]
+name = "cache_store"
+version = "0.2.3"
+dependencies = [
+ "better_file_maker",
+ "once_cell",
+ "openssl",
+ "openssl-sys",
+ "reqwest",
+ "rocket",
+ "rocket_contrib",
+ "serde",
+ "serde_json",
+ "tokio",
+ "txt_writer",
+]
+
+[[package]]
 name = "cc"
 version = "1.0.73"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1214,23 +1231,6 @@ dependencies = [
  "state",
  "time",
  "unicode-xid",
-]
-
-[[package]]
-name = "rust_store"
-version = "0.2.2"
-dependencies = [
- "better_file_maker",
- "once_cell",
- "openssl",
- "openssl-sys",
- "reqwest",
- "rocket",
- "rocket_contrib",
- "serde",
- "serde_json",
- "tokio",
- "txt_writer",
 ]
 
 [[package]]
