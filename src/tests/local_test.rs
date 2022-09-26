@@ -69,10 +69,7 @@ fn local_func_test() {
     func.read_cache_data("hello").expect("");
     func.delete_cache_data("hello").expect("");
     let data = func.read_cache_data("hello");
-    match data {
-        Ok(e) => {
-            panic!("{}", e);
-        }
-        Err(_) => {}
+    if let Ok(e) = data {
+        panic!("{}", e);
     }
 }
