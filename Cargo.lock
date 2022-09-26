@@ -130,7 +130,7 @@ checksum = "ec8a7b6a70fde80372154c65702f00a0f56f3e1c36abbc6c440484be248856db"
 
 [[package]]
 name = "cache_store"
-version = "0.2.5"
+version = "0.2.6"
 dependencies = [
  "better_file_maker",
  "once_cell",

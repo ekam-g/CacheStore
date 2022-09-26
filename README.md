@@ -258,6 +258,10 @@ otherwise it shows the error it received like this.
 
 For local functions is returns a Result<(), String> and the errors are the same just make sure to handle the error by matching the string.
 
+## Older Versions?
+
+There was a name change and old versions are stored here https://crates.io/crates/rust_store
+
 ## Still have questions?
 
 Dm me in discord at Carghai88#1468
