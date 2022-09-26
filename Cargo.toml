@@ -1,5 +1,5 @@
 [package]
-name = "cache_store"
+name = "rust_store"
 version = "0.2.5"
 edition = "2021"
 description = "A quick and easy cache database for you to use!"
