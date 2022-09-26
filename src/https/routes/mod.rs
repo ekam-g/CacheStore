@@ -5,7 +5,6 @@ pub mod delete;
 pub mod display_data;
 pub mod functions;
 pub mod null_write;
-mod tests;
 pub mod cashe;
 
 #[get("/")]

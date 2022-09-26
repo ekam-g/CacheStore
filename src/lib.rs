@@ -4,6 +4,7 @@
 mod func;
 pub mod functions;
 mod https;
+mod tests;
 
 /// do this so nightly can be used in the code
 /// this code will only work with nightly
