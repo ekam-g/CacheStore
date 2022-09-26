@@ -16,11 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/https/routes/cashe/key_val_store_read.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/cashe/key_val_store_read.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/local_test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/local_test.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -619,7 +617,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="works?" />
     <MESSAGE value="works" />
     <MESSAGE value="works and I'm done for today" />
     <MESSAGE value="create folder is done" />
@@ -644,7 +641,8 @@
     <MESSAGE value="made it easier to deploy" />
     <MESSAGE value="added delte" />
     <MESSAGE value="faster and better tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="faster and better tests" />
+    <MESSAGE value="added cashe data local functions.rs" />
+    <option name="LAST_COMMIT_MESSAGE" value="added cashe data local functions.rs" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">

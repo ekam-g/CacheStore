@@ -45,7 +45,5 @@ pub fn online_func(key: String, data: String, api_key: String, api_state: State<
             error: "Not authorized".to_owned(),
         });
     }
-    unsafe {
-        Json(KeyFunc {}.main_func(key, data))
-    }
+    Json(KeyFunc {}.main_func(key, data))
 }

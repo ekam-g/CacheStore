@@ -1,8 +1,10 @@
+use core::panicking::panic;
+
 use crate::StateData;
 
 // Local functions testing
 //_________________________________________________________________________________________________________________________
-fn test_read_error(func: StateData, what_error: String) {
+fn test_read_error(func: &StateData, what_error: String) {
     let check_data = func.read_data("test/worked/local/data");
     match check_data {
         Ok(data) => {
@@ -53,16 +55,25 @@ fn local_func_test() {
     };
     func.null_write("test/worked/local/data")
         .expect("write null functions failed");
+
     func.write_data("test/worked/local", "test/worked/local", "data")
         .expect("msg");
-    test_read_error(func, "data is null".to_owned());
 
-    let func = StateData {
-        api_key: "your_api_key".to_owned(),
-        null: "null_nil_value_key:345n,234lj52".to_owned(),
-        data_storage_location: "database/".to_owned(),
-    };
+    test_read_error(&func, "data is null".to_owned());
+
     func.delete_data("test/worked/local/data")
         .expect("delete failed");
-    test_read_error(func, "No such file or directory (os error 2)".to_owned());
+    test_read_error(&func, "No such file or directory (os error 2)".to_owned());
+    // Cashe tests
+    func.add_cache_data("hello", "worked").expect("");
+    func.add_cache_data("hello", "worked").expect("");
+    func.read_cache_data("hello").expect("");
+    func.delete_cache_data("hello").expect("");
+    let data = func.read_cache_data("hello");
+    match data {
+        Ok(e) => {
+            panic!("{}", e);
+        }
+        Err(_) => {}
+    }
 }

@@ -1,5 +1,7 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
+extern crate core;
+
 mod func;
 pub mod functions;
 mod https;
