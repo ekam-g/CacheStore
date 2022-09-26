@@ -1,5 +1,6 @@
-use better_file_maker;
 use std::fmt::Display;
+
+use better_file_maker;
 
 use crate::StateData;
 
@@ -69,5 +70,34 @@ impl StateData {
         let null_error =
             crate::https::routes::null_write::NullFunc {}.core(self.null.clone(), final_path);
         self.error_or_not(null_error.error)
+    }
+    pub fn add_cache_data<T: Display, T2: Display, >(
+        &self,
+        key: T,
+        data_to_write: T2,
+    ) -> Result<(), String> {
+        let write_error =
+            crate::https::routes::cashe::key_val_store_read::KeyFunc {}.main_func(key, data_to_write);
+        self.error_or_not(write_error.error)
+    }
+    pub fn read_cache_data<T: Display, >(
+        &self,
+        key: T,
+    ) -> Result<String, String> {
+        let read_error =
+            crate::https::routes::cashe::key_val_read::KeyFunc {}.main_func(key);
+        if read_error.error != "Success" {
+            Err(read_error.error)
+        } else {
+            Ok(read_error.data)
+        }
+    }
+    pub fn delete_cache_data<T: Display,>(
+        &self,
+        key: T,
+    ) -> Result<(), String> {
+        let delete_error =
+            crate::https::routes::cashe::key_val_delete::KeyFuncDel {}.main_func(key);
+        self.error_or_not(delete_error.error)
     }
 }
