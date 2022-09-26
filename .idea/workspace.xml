@@ -15,7 +15,9 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="" />
+    <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -613,8 +615,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="almost done" />
-    <MESSAGE value="add data work just need to optimize it" />
     <MESSAGE value="clean up" />
     <MESSAGE value="faster" />
     <MESSAGE value="fatser" />
@@ -638,7 +638,9 @@
     <MESSAGE value="better test code" />
     <MESSAGE value="MAJOR update added cache data" />
     <MESSAGE value="updated packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated packages" />
+    <MESSAGE value="documention" />
+    <MESSAGE value="Cargo.lock" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cargo.lock" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
