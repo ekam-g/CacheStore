@@ -17,7 +17,8 @@ impl Web {
                     routes::delete::delete,
                     routes::null_write::null_write,
                     routes::cashe::key_val_store_read::online_func,
-                    routes::cashe::key_val_read::online_func
+                    routes::cashe::key_val_read::online_func,
+                    routes::cashe::key_val_delete::online_func,
                 ],
             )
             .launch();
