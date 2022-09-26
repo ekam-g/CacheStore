@@ -623,7 +623,6 @@
     <MESSAGE value="works?" />
     <MESSAGE value="works" />
     <MESSAGE value="works and I'm done for today" />
-    <MESSAGE value="stuff" />
     <MESSAGE value="create folder is done" />
     <MESSAGE value="add data" />
     <MESSAGE value="spliting func" />
@@ -642,7 +641,8 @@
     <MESSAGE value="more rusty code" />
     <MESSAGE value="working on carshing data funtions" />
     <MESSAGE value="bux fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bux fix" />
+    <MESSAGE value="stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="stuff" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
