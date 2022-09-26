@@ -16,9 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/database/test/worked/local/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/https/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/https/routes/cashe/key_val_delete.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/cashe/key_val_delete.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/https/routes/tests/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/tests/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -617,7 +617,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="read works" />
     <MESSAGE value="opmized" />
     <MESSAGE value="works?" />
     <MESSAGE value="works" />
@@ -642,7 +641,8 @@
     <MESSAGE value="bux fix" />
     <MESSAGE value="stuff" />
     <MESSAGE value="made it easier to deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="made it easier to deploy" />
+    <MESSAGE value="added delte" />
+    <option name="LAST_COMMIT_MESSAGE" value="added delte" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
