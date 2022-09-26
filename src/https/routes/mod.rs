@@ -1,11 +1,12 @@
+use rocket::*;
+
 pub mod add_data;
 pub mod delete;
 pub mod display_data;
 pub mod functions;
 pub mod null_write;
 mod tests;
-
-use rocket::*;
+pub mod cashe;
 
 #[get("/")]
 pub fn index() -> &'static str {

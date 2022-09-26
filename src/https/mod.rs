@@ -1,6 +1,6 @@
-pub mod routes;
-
 use rocket::*;
+
+pub mod routes;
 
 pub struct Web {}
 
@@ -16,6 +16,8 @@ impl Web {
                     routes::add_data::add,
                     routes::delete::delete,
                     routes::null_write::null_write,
+                    routes::cashe::key_val_store_read::online_func,
+                    routes::cashe::key_val_read::online_func
                 ],
             )
             .launch();
