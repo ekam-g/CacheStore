@@ -11,10 +11,10 @@ It is fast, and it takes 2ms to return data. Also, if you want to local store da
 ## Start the online database
 
 ```
-use rust_store;
+use cache_store;
 
 fn main() {
-    rust_store::StateData {
+    cache_store::StateData {
         api_key: "your_api_key".to_string(),
         // make sure to change this to some key!
         // change this if your want but otherwise don't
@@ -101,10 +101,10 @@ To use this you don't need to start the database.
 To write
 
 ```
-use rust_store;
+use cache_store;
 
 fn main(){
-    let func = rust_store::StateData {
+    let func = cache_store::StateData {
             api_key: "your_api_key".to_string(),
             null: "null_nil_value_key:345n,234lj52".to_string(),
             data_storage_location: "database/".to_string(),
@@ -117,10 +117,10 @@ fn main(){
 To read
 
 ```
-use rust_store;
+use cache_store;
 
 fn main(){
-     let func = rust_store::StateData {
+     let func = cache_store::StateData {
             api_key: "your_api_key".to_string(),
             null: "null_nil_value_key:345n,234lj52".to_string(),
             data_storage_location: "database/".to_string(),
@@ -134,10 +134,10 @@ fn main(){
 To Delete
 
 ```
-use rust_store;
+use cache_store;
 
 fn main(){
-     let func = rust_store::StateData {
+     let func = cache_store::StateData {
             api_key: "your_api_key".to_string(),
             null: "null_nil_value_key:345n,234lj52".to_string(),
             data_storage_location: "database/".to_string(),
@@ -150,10 +150,10 @@ fn main(){
 To write null
 
 ```
-use rust_store;
+use cache_store;
 
 fn main(){
-     let func = rust_store::StateData {
+     let func = cache_store::StateData {
             api_key: "your_api_key".to_string(),
             null: "null_nil_value_key:345n,234lj52".to_string(),
             data_storage_location: "database/".to_string(),
@@ -166,10 +166,10 @@ fn main(){
 To write hello cache in worked
 
 ```
-use rust_store;
+use cache_store;
 
 fn main(){
-     let func = rust_store::StateData {
+     let func = cache_store::StateData {
             api_key: "your_api_key".to_string(),
             null: "null_nil_value_key:345n,234lj52".to_string(),
             data_storage_location: "database/".to_string(),
@@ -181,10 +181,10 @@ fn main(){
 To delete hello cache
 
 ```
-use rust_store;
+use cache_store;
 
 fn main(){
-     let func = rust_store::StateData {
+     let func = cache_store::StateData {
             api_key: "your_api_key".to_string(),
             null: "null_nil_value_key:345n,234lj52".to_string(),
             data_storage_location: "database/".to_string(),
@@ -196,10 +196,10 @@ fn main(){
 To read hello cache
 
 ```
-use rust_store;
+use cache_store;
 
 fn main(){
-     let func = rust_store::StateData {
+     let func = cache_store::StateData {
             api_key: "your_api_key".to_string(),
             null: "null_nil_value_key:345n,234lj52".to_string(),
             data_storage_location: "database/".to_string(),
@@ -226,7 +226,7 @@ This database requires you to put a directory (if you want to use a "/" use a "`
 
 ## How does this database value handle null?
 
-This database has an write null feature to write a null key. If the null key is read when your read a txt it returns
+This database has a write null feature to write a null key. If the null key is read when your read a txt it returns
 
 ```
 {
