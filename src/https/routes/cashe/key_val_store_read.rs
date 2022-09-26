@@ -21,7 +21,6 @@ pub struct KeyFunc {}
 
 impl KeyFunc {
     pub unsafe fn main_func<T: Display, E: Display>(&self, key: T, data: E) -> Data {
-        //Todo This may not work
         let edit_error = RAM_STORE.lock();
         match edit_error {
             Err(error_data) =>
