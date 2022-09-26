@@ -21,7 +21,7 @@ fn main() {
     }
     .start_database_online()
 }
-
+// cargo build --release --target x86_64-unknown-linux-gnu
 // rustup override set nightly
 // do this so nightly can be used in the code
 // this code will only work with nightly

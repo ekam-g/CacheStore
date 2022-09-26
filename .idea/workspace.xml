@@ -16,15 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05571d5b-7491-4d29-90f9-8faf19798f9b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/https/routes/cashe/key_val_delete.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/https/routes/cashe/key_val_read.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/https/routes/cashe/key_val_store_read.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/https/routes/cashe/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/https/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/https/routes/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/https/routes/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -623,8 +617,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add https fn" />
-    <MESSAGE value="https works now" />
     <MESSAGE value="work fine" />
     <MESSAGE value="read works" />
     <MESSAGE value="opmized" />
@@ -648,7 +640,9 @@
     <MESSAGE value="pass clippy" />
     <MESSAGE value="updating" />
     <MESSAGE value="more rusty code" />
-    <option name="LAST_COMMIT_MESSAGE" value="more rusty code" />
+    <MESSAGE value="working on carshing data funtions" />
+    <MESSAGE value="bux fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bux fix" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
